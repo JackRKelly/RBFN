@@ -1,2 +1,33 @@
 nav.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  z-index: 200;
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    a {
+      padding: 15px 20px;
+      text-decoration: none;
+      font-size: 20px;
+      color: black;
+      &.logo {
+        padding: 0 20px;
+        li {
+          svg {
+            height: 40px;
+          }
+        }
+      }
+      li {
+        display: inline-block;
+      }
+    }
+  }
 }

@@ -22,41 +22,35 @@ const App: FC = () => {
     <Router>
       <nav className="navigation">
         <ul>
-          <li>
-            <NavLink exact to="/about" activeClassName="active">
-              About
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/newsletter" activeClassName="active">
-              Newsletter
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/speakers" activeClassName="active">
-              Speakers
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/">
+          <NavLink exact to="/about" activeClassName="active">
+            <li>About</li>
+          </NavLink>
+
+          <NavLink to="/newsletter" activeClassName="active">
+            <li>Newsletter</li>
+          </NavLink>
+
+          <NavLink to="/speakers" activeClassName="active">
+            <li>Speakers</li>
+          </NavLink>
+
+          <NavLink to="/" className="logo">
+            <li>
               <SVG src={Logo} />
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/events" activeClassName="active">
-              Events
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/blog" activeClassName="active">
-              Blog
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/connect" activeClassName="active">
-              Connect
-            </NavLink>
-          </li>
+            </li>
+          </NavLink>
+
+          <NavLink to="/events" activeClassName="active">
+            <li>Events</li>
+          </NavLink>
+
+          <NavLink to="/blog" activeClassName="active">
+            <li>Blog</li>
+          </NavLink>
+
+          <NavLink to="/connect" activeClassName="active">
+            <li>Connect</li>
+          </NavLink>
         </ul>
       </nav>
 
