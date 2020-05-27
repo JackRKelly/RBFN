@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useState, useEffect } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -18,6 +18,22 @@ import Blog from "./pages/Blog/blog";
 import "./App.scss";
 
 const App: FC = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  const checkMobile = () => {
+    if (window.innerWidth < 600) {
+      setIsMobile(true);
+    } else {
+      setIsMobile(false);
+    }
+  };
+
+  useEffect(() => {
+    checkMobile();
+  }, [checkMobile]);
+
+  window.addEventListener("resize", checkMobile);
+
   return (
     <Router>
       <nav className="navigation">
