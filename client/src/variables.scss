@@ -1,8 +1,6 @@
-$white: #fff;
-$black: #000;
-$gray: #333;
-$lightgray: #69727b;
-$red: #c1272d;
+$navy: #16425b;
+$lime: #7ccd7c;
+$green: #3e885b;
 
 $small: 400px;
 $medium: 800px;
@@ -15,10 +13,9 @@ $extralarge: 1500px;
   transform: translateX(-50%);
   transition: 0.3s all ease-in-out;
   max-width: 1300px;
-  padding-top: 60px;
+  padding-top: 66px;
   @media (max-width: 500px) {
     width: 90%;
-    padding-top: 75px;
   }
   @media (max-width: 800px) {
     width: 85%;

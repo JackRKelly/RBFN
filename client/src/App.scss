@@ -1,3 +1,5 @@
+@import "./variables.scss";
+
 nav.navigation {
   position: fixed;
   top: 0;
@@ -5,6 +7,7 @@ nav.navigation {
   right: 0;
   background-color: white;
   z-index: 200;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.15);
   ul {
     list-style: none;
     padding: 0;
@@ -16,9 +19,40 @@ nav.navigation {
       padding: 15px 20px;
       text-decoration: none;
       font-size: 20px;
-      color: black;
+      color: $navy;
+      position: relative;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      @include bezier(150ms);
+      &:hover {
+        transform: scale(1.1);
+      }
+      &.active {
+        color: $green;
+      }
+      &.active::after {
+        background-color: $green;
+      }
+      &::after {
+        content: "";
+        background-color: $navy;
+        width: 0;
+        position: absolute;
+        bottom: 9px;
+        height: 3px;
+        left: 50%;
+        transform: translateX(-50%);
+        @include bezier(150ms);
+      }
+      &:hover::after {
+        width: 85%;
+      }
       &.logo {
-        padding: 0 20px;
+        padding: 5px 20px 15px;
+        &::after {
+          display: none;
+        }
         li {
           svg {
             height: 40px;
