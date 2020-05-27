@@ -6,6 +6,8 @@ import {
   NavLink,
 } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
+import SVG from "react-inlinesvg";
+import Logo from "./assets/svg/RBFN.svg";
 import Home from "./pages/Home/home";
 import Connect from "./pages/Connect/connect";
 import About from "./pages/About/about";
@@ -18,7 +20,7 @@ import "./App.scss";
 const App: FC = () => {
   return (
     <Router>
-      <nav>
+      <nav className="navigation">
         <ul>
           <li>
             <NavLink exact to="/about" activeClassName="active">
@@ -36,7 +38,9 @@ const App: FC = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/">Logo</NavLink>
+            <NavLink to="/">
+              <SVG src={Logo} />
+            </NavLink>
           </li>
           <li>
             <NavLink to="/events" activeClassName="active">
