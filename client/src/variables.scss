@@ -1,0 +1,36 @@
+$white: #fff;
+$black: #000;
+$gray: #333;
+$lightgray: #69727b;
+$red: #c1272d;
+
+$small: 400px;
+$medium: 800px;
+$large: 1200px;
+$extralarge: 1500px;
+
+@mixin main {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 0.3s all ease-in-out;
+  max-width: 1300px;
+  @media (max-width: 500px) {
+    width: 90%;
+    padding-top: 75px;
+  }
+  @media (max-width: 800px) {
+    width: 85%;
+  }
+  @media (min-width: 800px) {
+    width: 80%;
+  }
+}
+
+@mixin bezier($duration) {
+  transition: all $duration cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@mixin ease-in-out($duration) {
+  transition: all $duration ease-in-out;
+}

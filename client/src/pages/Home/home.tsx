@@ -1,8 +1,16 @@
-import React, { FC } from "react";
+import React, { FC, useEffect } from "react";
 import "./home.scss";
 
 const Home: FC = () => {
-  return <h1>Home</h1>;
+  useEffect(() => {
+    document.title = "Home | RBFN";
+  }, []);
+
+  return (
+    <main>
+      <h1>Home</h1>
+    </main>
+  );
 };
 
 export default Home;

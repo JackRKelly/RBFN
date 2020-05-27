@@ -1,8 +1,16 @@
-import React, { FC } from "react";
+import React, { FC, useEffect } from "react";
 import "./connect.scss";
 
 const Connect: FC = () => {
-  return <h1>Connect</h1>;
+  useEffect(() => {
+    document.title = "Connect | RBFN";
+  }, []);
+
+  return (
+    <main>
+      <h1>Connect</h1>
+    </main>
+  );
 };
 
 export default Connect;

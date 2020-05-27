@@ -1,8 +1,16 @@
-import React, { FC } from "react";
+import React, { FC, useEffect } from "react";
 import "./speakers.scss";
 
 const Speakers: FC = () => {
-  return <h1>Speakers</h1>;
+  useEffect(() => {
+    document.title = "Speakers | RBFN";
+  }, []);
+
+  return (
+    <main>
+      <h1>Speakers</h1>
+    </main>
+  );
 };
 
 export default Speakers;
