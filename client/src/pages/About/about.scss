@@ -4,5 +4,9 @@ main {
   @include main;
   h1 {
     font-size: 40px;
+    margin: 25px 0 15px;
+  }
+  p {
+    margin: 0;
   }
 }

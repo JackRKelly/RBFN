@@ -80,9 +80,6 @@ nav {
     }
     li {
       @include bezier(150ms);
-      &:hover {
-        transform: scale(1.1);
-      }
     }
     a {
       padding: 15px 20px;
@@ -116,8 +113,8 @@ nav {
       }
       &.logo {
         padding: 5px 20px 15px;
-        &::after {
-          display: none;
+        &.active::after {
+          background-color: $lime;
         }
         li {
           svg {

@@ -8,7 +8,7 @@ const About: FC = () => {
 
   return (
     <main>
-      <h1>About</h1>
+      <h1>About RBFN</h1>
       <p>
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi quas
         architecto nihil consectetur dolores laboriosam recusandae ex ducimus
@@ -24,20 +24,7 @@ const About: FC = () => {
         quia aliquid recusandae. Quasi quidem ducimus quisquam quia ut suscipit
         tenetur incidunt totam aliquam accusamus unde sint numquam delectus modi
         illo non voluptas id, aliquid facere voluptatum. Doloribus illo porro
-        eius excepturi voluptas nam ipsa consequuntur molestiae, ab consectetur
-        quaerat iure. Eos numquam corporis quae rerum, amet, quaerat accusantium
-        esse pariatur beatae rem quas dolor incidunt est similique soluta ea
-        nulla maiores vitae? Ullam incidunt voluptate quo rerum ex consequatur
-        assumenda placeat dolorem cum ducimus eaque iste sunt, vitae corporis,
-        tempora pariatur, vero et fugit alias. Doloremque rem similique facilis
-        totam esse itaque, saepe optio hic ut, iure sapiente dolores velit sequi
-        quibusdam quisquam repellat dolor fugit perspiciatis vel? Nisi a
-        accusantium cum officiis, inventore facilis sapiente culpa dolores in
-        necessitatibus laudantium eaque adipisci aspernatur quasi sit obcaecati
-        saepe reprehenderit libero. Aperiam soluta impedit error aspernatur
-        minus. At illo odio, ex nesciunt aut eum repellat, expedita asperiores
-        magni facere voluptatem dolorem ab culpa eveniet quod reprehenderit,
-        odit commodi.
+        eius excepturi.
       </p>
     </main>
   );
