@@ -9,10 +9,11 @@ const Newsletter: FC = () => {
   return (
     <main>
       <h1>Newsletter</h1>
-      <h3>Recent editions:</h3>
+      <h2>Recent editions:</h2>
       <ul className="recent-editions">
         <li>
-          <h5>05/28/2020 - 17 Days ago</h5>
+          <h5>Newsletter #1</h5>
+          <h6>05/28/2020 - 17 Days ago</h6>
           <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda
             ipsum quidem sint, odit labore aliquid? Suscipit omnis dolorum nobis

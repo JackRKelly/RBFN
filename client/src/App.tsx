@@ -33,7 +33,7 @@ const App: FC = () => {
 
   useEffect(() => {
     checkMobile();
-  }, [checkMobile]);
+  }, []);
 
   window.addEventListener("resize", checkMobile);
 
