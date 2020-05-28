@@ -8,6 +8,7 @@ import {
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import SVG from "react-inlinesvg";
 import Logo from "./assets/svg/RBFN.svg";
+import Menu from "./assets/svg/menu.svg";
 import Home from "./pages/Home/home";
 import Connect from "./pages/Connect/connect";
 import About from "./pages/About/about";
@@ -37,22 +38,55 @@ const App: FC = () => {
   return (
     <Router>
       {isMobile ? (
-        <nav className="navigation mobile">
-          <ul>
-            <NavLink to="/" className="logo">
-              <li>
-                <SVG src={Logo} />
+        <>
+          <nav className="navigation mobile">
+            <ul>
+              <NavLink exact to="/" className="logo">
+                <li>
+                  <SVG src={Logo} />
+                </li>
+              </NavLink>
+              <li className="dropdown">
+                <SVG src={Menu} />
               </li>
-            </NavLink>
-            <li className="dropdown">
-              <SVG src={Logo} />
-            </li>
-          </ul>
-        </nav>
+            </ul>
+          </nav>
+          <nav className="navigation-full">
+            <ul>
+              <NavLink exact to="/home" activeClassName="active">
+                <li>Home</li>
+              </NavLink>
+
+              <NavLink to="/about" activeClassName="active">
+                <li>About</li>
+              </NavLink>
+
+              <NavLink to="/newsletter" activeClassName="active">
+                <li>Newsletter</li>
+              </NavLink>
+
+              <NavLink to="/speakers" activeClassName="active">
+                <li>Speakers</li>
+              </NavLink>
+
+              <NavLink to="/events" activeClassName="active">
+                <li>Events</li>
+              </NavLink>
+
+              <NavLink to="/blog" activeClassName="active">
+                <li>Blog</li>
+              </NavLink>
+
+              <NavLink to="/connect" activeClassName="active">
+                <li>Connect</li>
+              </NavLink>
+            </ul>
+          </nav>
+        </>
       ) : (
         <nav className="navigation desktop">
           <ul>
-            <NavLink exact to="/about" activeClassName="active">
+            <NavLink to="/about" activeClassName="active">
               <li>About</li>
             </NavLink>
 
@@ -64,7 +98,7 @@ const App: FC = () => {
               <li>Speakers</li>
             </NavLink>
 
-            <NavLink to="/" className="logo">
+            <NavLink exact to="/" className="logo">
               <li>
                 <SVG src={Logo} />
               </li>

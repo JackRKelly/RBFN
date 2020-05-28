@@ -1,6 +1,36 @@
 @import "./variables.scss";
 
-nav.navigation {
+nav.navigation-full {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  z-index: 300;
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    a {
+      padding: 10px;
+      margin: 10px;
+      text-decoration: none;
+      &::after {
+        bottom: 5px;
+      }
+    }
+  }
+}
+
+nav {
   position: fixed;
   top: 0;
   left: 0;
@@ -12,9 +42,15 @@ nav.navigation {
     ul {
       justify-content: space-between;
       li.dropdown {
-        padding: 5px 20px 15px;
+        padding: 0 20px 0;
+        cursor: pointer;
+        @include bezier(150ms);
+        &:hover {
+          transform: scale(1.1);
+        }
         svg {
-          height: 40px;
+          height: 35px;
+          fill: $navy;
         }
       }
     }
