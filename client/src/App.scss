@@ -8,6 +8,17 @@ nav.navigation {
   background-color: white;
   z-index: 200;
   box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.15);
+  &.mobile {
+    ul {
+      justify-content: space-between;
+      li.dropdown {
+        padding: 5px 20px 15px;
+        svg {
+          height: 40px;
+        }
+      }
+    }
+  }
   ul {
     list-style: none;
     padding: 0;
@@ -16,6 +27,8 @@ nav.navigation {
     justify-content: space-evenly;
     align-items: center;
     margin: auto;
+    width: 95%;
+    @include bezier(150ms);
     @media (min-width: $large) {
       width: 80%;
     }

@@ -21,7 +21,7 @@ const App: FC = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   const checkMobile = () => {
-    if (window.innerWidth < 600) {
+    if (window.innerWidth < 1100) {
       setIsMobile(true);
     } else {
       setIsMobile(false);
@@ -36,39 +36,54 @@ const App: FC = () => {
 
   return (
     <Router>
-      <nav className="navigation">
-        <ul>
-          <NavLink exact to="/about" activeClassName="active">
-            <li>About</li>
-          </NavLink>
-
-          <NavLink to="/newsletter" activeClassName="active">
-            <li>Newsletter</li>
-          </NavLink>
-
-          <NavLink to="/speakers" activeClassName="active">
-            <li>Speakers</li>
-          </NavLink>
-
-          <NavLink to="/" className="logo">
-            <li>
+      {isMobile ? (
+        <nav className="navigation mobile">
+          <ul>
+            <NavLink to="/" className="logo">
+              <li>
+                <SVG src={Logo} />
+              </li>
+            </NavLink>
+            <li className="dropdown">
               <SVG src={Logo} />
             </li>
-          </NavLink>
+          </ul>
+        </nav>
+      ) : (
+        <nav className="navigation desktop">
+          <ul>
+            <NavLink exact to="/about" activeClassName="active">
+              <li>About</li>
+            </NavLink>
 
-          <NavLink to="/events" activeClassName="active">
-            <li>Events</li>
-          </NavLink>
+            <NavLink to="/newsletter" activeClassName="active">
+              <li>Newsletter</li>
+            </NavLink>
 
-          <NavLink to="/blog" activeClassName="active">
-            <li>Blog</li>
-          </NavLink>
+            <NavLink to="/speakers" activeClassName="active">
+              <li>Speakers</li>
+            </NavLink>
 
-          <NavLink to="/connect" activeClassName="active">
-            <li>Connect</li>
-          </NavLink>
-        </ul>
-      </nav>
+            <NavLink to="/" className="logo">
+              <li>
+                <SVG src={Logo} />
+              </li>
+            </NavLink>
+
+            <NavLink to="/events" activeClassName="active">
+              <li>Events</li>
+            </NavLink>
+
+            <NavLink to="/blog" activeClassName="active">
+              <li>Blog</li>
+            </NavLink>
+
+            <NavLink to="/connect" activeClassName="active">
+              <li>Connect</li>
+            </NavLink>
+          </ul>
+        </nav>
+      )}
 
       <Route
         render={({ location }) => (
