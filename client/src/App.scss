@@ -9,7 +9,7 @@ nav.navigation-full {
   background-color: white;
   z-index: 300;
   overflow: hidden;
-  @include ease-in-out(250ms);
+  @include ease-in-out(150ms);
   ul {
     list-style: none;
     padding: 0;

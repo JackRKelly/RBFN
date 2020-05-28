@@ -184,7 +184,11 @@ const App: FC = () => {
       <Route
         render={({ location }) => (
           <TransitionGroup className="content">
-            <CSSTransition key={location.key} timeout={300} classNames="fade">
+            <CSSTransition
+              key={location.key}
+              timeout={isMobile ? 0 : 300}
+              classNames={isMobile ? "" : "fade"}
+            >
               <Switch location={location}>
                 <Route exact path="/">
                   <Home />
