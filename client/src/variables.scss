@@ -35,8 +35,8 @@ $extralarge: 1500px;
 }
 
 @mixin button-hover {
+  position: relative;
   &:hover {
-    transform: scale(1.075);
     padding-right: 30px;
     &::after {
       opacity: 1;

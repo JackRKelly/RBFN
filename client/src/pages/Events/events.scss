@@ -45,7 +45,6 @@ main {
           font-family: "Josefin Sans", sans-serif;
           cursor: pointer;
           outline: none;
-          position: relative;
           @include bezier(200ms);
           @include button-hover;
         }

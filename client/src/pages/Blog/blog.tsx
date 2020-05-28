@@ -9,7 +9,7 @@ const Blog: FC = () => {
   return (
     <main>
       <h1>Blog</h1>
-      <h2>Blog posts:</h2>
+      <h2>Past blog posts:</h2>
       <ul className="blog-posts">
         <li>
           <h5>Blog post title</h5>

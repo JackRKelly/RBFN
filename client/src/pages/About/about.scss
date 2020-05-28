@@ -9,5 +9,8 @@ main {
   p {
     margin: 0;
     font-size: 16px;
+    @media (min-width: $large) {
+      font-size: 20px;
+    }
   }
 }
