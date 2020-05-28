@@ -9,6 +9,7 @@ const Events: FC = () => {
   return (
     <main>
       <h1>Events</h1>
+      <h2>Upcoming events:</h2>
       <ul className="upcoming-events">
         <li>
           <h5>Event Name</h5>

@@ -9,6 +9,7 @@ const Speakers: FC = () => {
   return (
     <main>
       <h1>Speakers</h1>
+      <h2>Past speakers:</h2>
       <ul className="past-speakers">
         <li>
           <h5>Speaker Name</h5>
