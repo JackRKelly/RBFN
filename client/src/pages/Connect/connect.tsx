@@ -1,4 +1,8 @@
 import React, { FC, useEffect } from "react";
+import SVG from "react-inlinesvg";
+import Twitter from "../../assets/svg/twitter.svg";
+import Facebook from "../../assets/svg/facebook.svg";
+import Email from "../../assets/svg/email.svg";
 import "./connect.scss";
 
 const Connect: FC = () => {
@@ -10,13 +14,42 @@ const Connect: FC = () => {
     <main>
       <h1>Connect</h1>
       <ul className="connection-list">
-        <li>
+        <li className="twitter">
           <div className="card-header">
+            <SVG src={Twitter} />
             <h5>@keithkcvc</h5>
           </div>
 
           <p>Revenue Based Finance Network Founder's Twitter</p>
-          <button>View Page</button>
+          <div className="button-container">
+            <a href="https://twitter.com/keithkcvc" target="_blank">
+              View Page
+            </a>
+          </div>
+        </li>
+        <li className="email">
+          <div className="card-header">
+            <SVG src={Email} />
+            <h5>email@email.com</h5>
+          </div>
+
+          <p>Revenue Based Finance Network's Email</p>
+          <div className="button-container">
+            <a href="mailto:email@email.com">Send Email</a>
+          </div>
+        </li>
+        <li className="facebook">
+          <div className="card-header">
+            <SVG src={Facebook} />
+            <h5>RBWG Group</h5>
+          </div>
+
+          <p>Revenue Based Finance Network's Facebook group</p>
+          <div className="button-container">
+            <a href="https://facebook.com" target="_blank">
+              View Group
+            </a>
+          </div>
         </li>
       </ul>
     </main>
