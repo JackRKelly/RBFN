@@ -3,11 +3,13 @@
 nav.navigation-full {
   position: fixed;
   top: 0;
-  left: 0;
   right: 0;
+  left: unset;
   bottom: 0;
   background-color: white;
   z-index: 300;
+  overflow: hidden;
+  @include ease-in-out(250ms);
   ul {
     list-style: none;
     padding: 0;
@@ -19,6 +21,15 @@ nav.navigation-full {
     justify-content: center;
     flex-wrap: wrap;
     flex-direction: column;
+    li.close {
+      width: 50px;
+      cursor: pointer;
+      padding: 10px;
+      margin: 10px 0 20px;
+      svg {
+        fill: $navy;
+      }
+    }
     a {
       padding: 10px;
       margin: 10px;
@@ -44,10 +55,6 @@ nav {
       li.dropdown {
         padding: 0 20px 0;
         cursor: pointer;
-        @include bezier(150ms);
-        &:hover {
-          transform: scale(1.1);
-        }
         svg {
           height: 35px;
           fill: $navy;
@@ -71,6 +78,12 @@ nav {
     @media (min-width: $extralarge) {
       width: 70%;
     }
+    li {
+      @include bezier(150ms);
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
     a {
       padding: 15px 20px;
       text-decoration: none;
@@ -81,9 +94,6 @@ nav {
       text-transform: uppercase;
       letter-spacing: 1px;
       @include bezier(150ms);
-      &:hover {
-        transform: scale(1.1);
-      }
       &.active {
         color: $green;
       }

@@ -9,6 +9,7 @@ import { TransitionGroup, CSSTransition } from "react-transition-group";
 import SVG from "react-inlinesvg";
 import Logo from "./assets/svg/RBFN.svg";
 import Menu from "./assets/svg/menu.svg";
+import Close from "./assets/svg/close.svg";
 import Home from "./pages/Home/home";
 import Connect from "./pages/Connect/connect";
 import About from "./pages/About/about";
@@ -20,6 +21,7 @@ import "./App.scss";
 
 const App: FC = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const [navigationOpen, setNavigationOpen] = useState(false);
 
   const checkMobile = () => {
     if (window.innerWidth < 1100) {
@@ -46,38 +48,98 @@ const App: FC = () => {
                   <SVG src={Logo} />
                 </li>
               </NavLink>
-              <li className="dropdown">
+              <li
+                className="dropdown"
+                onClick={() => {
+                  setNavigationOpen(true);
+                }}
+              >
                 <SVG src={Menu} />
               </li>
             </ul>
           </nav>
-          <nav className="navigation-full">
+          <nav
+            className="navigation-full"
+            style={{ width: navigationOpen ? "100%" : "0%" }}
+          >
             <ul>
-              <NavLink exact to="/home" activeClassName="active">
+              <li
+                className="close"
+                onClick={() => {
+                  setNavigationOpen(false);
+                }}
+              >
+                <SVG src={Close} />
+              </li>
+
+              <NavLink
+                exact
+                to="/"
+                activeClassName="active"
+                onClick={() => {
+                  setNavigationOpen(false);
+                }}
+              >
                 <li>Home</li>
               </NavLink>
 
-              <NavLink to="/about" activeClassName="active">
+              <NavLink
+                to="/about"
+                activeClassName="active"
+                onClick={() => {
+                  setNavigationOpen(false);
+                }}
+              >
                 <li>About</li>
               </NavLink>
 
-              <NavLink to="/newsletter" activeClassName="active">
+              <NavLink
+                to="/newsletter"
+                activeClassName="active"
+                onClick={() => {
+                  setNavigationOpen(false);
+                }}
+              >
                 <li>Newsletter</li>
               </NavLink>
 
-              <NavLink to="/speakers" activeClassName="active">
+              <NavLink
+                to="/speakers"
+                activeClassName="active"
+                onClick={() => {
+                  setNavigationOpen(false);
+                }}
+              >
                 <li>Speakers</li>
               </NavLink>
 
-              <NavLink to="/events" activeClassName="active">
+              <NavLink
+                to="/events"
+                activeClassName="active"
+                onClick={() => {
+                  setNavigationOpen(false);
+                }}
+              >
                 <li>Events</li>
               </NavLink>
 
-              <NavLink to="/blog" activeClassName="active">
+              <NavLink
+                to="/blog"
+                activeClassName="active"
+                onClick={() => {
+                  setNavigationOpen(false);
+                }}
+              >
                 <li>Blog</li>
               </NavLink>
 
-              <NavLink to="/connect" activeClassName="active">
+              <NavLink
+                to="/connect"
+                activeClassName="active"
+                onClick={() => {
+                  setNavigationOpen(false);
+                }}
+              >
                 <li>Connect</li>
               </NavLink>
             </ul>
