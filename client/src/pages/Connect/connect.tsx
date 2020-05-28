@@ -19,10 +19,13 @@ const Connect: FC = () => {
             <SVG src={Twitter} />
             <h5>@keithkcvc</h5>
           </div>
-
           <p>Revenue Based Finance Network Founder's Twitter</p>
           <div className="button-container">
-            <a href="https://twitter.com/keithkcvc" target="_blank">
+            <a
+              href="https://twitter.com/keithkcvc"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               View Page
             </a>
           </div>
@@ -32,7 +35,6 @@ const Connect: FC = () => {
             <SVG src={Email} />
             <h5>email@email.com</h5>
           </div>
-
           <p>Revenue Based Finance Network's Email</p>
           <div className="button-container">
             <a href="mailto:email@email.com">Send Email</a>
@@ -43,10 +45,13 @@ const Connect: FC = () => {
             <SVG src={Facebook} />
             <h5>RBWG Group</h5>
           </div>
-
           <p>Revenue Based Finance Network's Facebook group</p>
           <div className="button-container">
-            <a href="https://facebook.com" target="_blank">
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               View Group
             </a>
           </div>

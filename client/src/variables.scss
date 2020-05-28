@@ -14,7 +14,7 @@ $extralarge: 1500px;
   transform: translateX(-50%);
   transition: 0.3s all ease-in-out;
   max-width: 1300px;
-  padding-top: 66px;
+  padding: 66px 0 33px 0;
   @media (max-width: 500px) {
     width: 90%;
   }
