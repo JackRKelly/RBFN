@@ -48,6 +48,21 @@ main {
           @include bezier(200ms);
           &:hover {
             transform: scale(1.075);
+            padding-right: 30px;
+            &::after {
+              opacity: 1;
+            }
+          }
+          &::after {
+            content: "";
+            position: absolute;
+            right: 10px;
+            height: 18px;
+            width: 10px;
+            background-repeat: no-repeat;
+            background-image: url("../../assets/svg/arrow.svg");
+            opacity: 0;
+            @include ease-in-out(150ms);
           }
         }
       }
