@@ -9,13 +9,13 @@
     "timestamps": true
   },
   "attributes": {
-    "Content": {
+    "content": {
       "type": "richtext"
     },
-    "Title": {
+    "title": {
       "type": "string"
     },
-    "Banner": {
+    "banner": {
       "collection": "file",
       "via": "related",
       "allowedTypes": [
