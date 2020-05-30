@@ -22,6 +22,10 @@ const Blogs: FC = () => {
     <main>
       {blog ? (
         <>
+          <img
+            src={`http://localhost:1337${blog.banner[0].formats.large.url}`}
+            alt=""
+          />
           <h1>{blog.title}</h1>
           <h5>Created {formatDate(blog.createdAt)}</h5>
           <p>{blog.content}</p>
