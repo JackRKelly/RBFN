@@ -15,7 +15,7 @@ const Connect: FC<Props> = (props) => {
   useEffect(() => {
     document.title = "Connect | RBFN";
     setLoading(false);
-  }, []);
+  }, [setLoading]);
 
   return (
     <main>

@@ -7,6 +7,7 @@ import React, {
 } from "react";
 import { useParams } from "react-router-dom";
 import { Blog } from "../../common/blog";
+import MarkdownView from "react-showdown";
 import "./blog.scss";
 import { formatDate, differenceDate } from "../../common/date";
 
@@ -29,7 +30,7 @@ const Blogs: FC<Props> = (props) => {
         setLoading(false);
       });
     });
-  }, []);
+  }, [id, setLoading]);
 
   return (
     <main>
@@ -44,7 +45,7 @@ const Blogs: FC<Props> = (props) => {
             Posted {formatDate(blog.createdAt)} -{" "}
             {differenceDate(blog.createdAt)} days ago
           </h5>
-          <p>{blog.content}</p>
+          <MarkdownView markdown={blog.content} />
         </div>
       ) : (
         <></>

@@ -28,7 +28,7 @@ const Blogs: FC<Props> = (props) => {
         setLoading(false);
       });
     });
-  }, []);
+  }, [setLoading]);
 
   return (
     <main>
