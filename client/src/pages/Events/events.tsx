@@ -1,4 +1,11 @@
-import React, { FC, useEffect, Dispatch, SetStateAction } from "react";
+import React, {
+  FC,
+  useEffect,
+  Dispatch,
+  SetStateAction,
+  useState,
+} from "react";
+import { Event } from "../../common/event";
 import "./events.scss";
 
 interface Props {
@@ -7,10 +14,19 @@ interface Props {
 
 const Events: FC<Props> = (props) => {
   const { setLoading } = props;
+  const [events, setEvents] = useState<Array<Event>>();
 
   useEffect(() => {
     document.title = "Events | RBFN";
     setLoading(true);
+
+    fetch("http://localhost:1337/events").then((res) => {
+      res.json().then((json: Array<Event>) => {
+        setEvents(json);
+        setLoading(false);
+        console.log(json);
+      });
+    });
   }, []);
 
   return (
