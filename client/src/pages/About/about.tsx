@@ -1,9 +1,16 @@
-import React, { FC, useEffect } from "react";
+import React, { FC, useEffect, Dispatch, SetStateAction } from "react";
 import "./about.scss";
 
-const About: FC = () => {
+interface Props {
+  setLoading: Dispatch<SetStateAction<boolean>>;
+}
+
+const About: FC<Props> = (props) => {
+  const { setLoading } = props;
+
   useEffect(() => {
     document.title = "About | RBFN";
+    setLoading(false);
   }, []);
 
   return (

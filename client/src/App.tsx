@@ -199,10 +199,10 @@ const App: FC = () => {
               >
                 <Switch location={location}>
                   <Route exact path="/">
-                    <Home />
+                    <Home setLoading={setLoading} />
                   </Route>
                   <Route path="/about">
-                    <About />
+                    <About setLoading={setLoading} />
                   </Route>
                   <Route path="/newsletters">
                     <Newsletters setLoading={setLoading} />
@@ -220,7 +220,7 @@ const App: FC = () => {
                     <Blog setLoading={setLoading} />
                   </Route>
                   <Route path="/connect">
-                    <Connect />
+                    <Connect setLoading={setLoading} />
                   </Route>
                 </Switch>
               </CSSTransition>

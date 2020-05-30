@@ -1,13 +1,20 @@
-import React, { FC, useEffect } from "react";
+import React, { FC, useEffect, Dispatch, SetStateAction } from "react";
 import SVG from "react-inlinesvg";
 import Twitter from "../../assets/svg/twitter.svg";
 import Facebook from "../../assets/svg/facebook.svg";
 import Email from "../../assets/svg/email.svg";
 import "./connect.scss";
 
-const Connect: FC = () => {
+interface Props {
+  setLoading: Dispatch<SetStateAction<boolean>>;
+}
+
+const Connect: FC<Props> = (props) => {
+  const { setLoading } = props;
+
   useEffect(() => {
     document.title = "Connect | RBFN";
+    setLoading(false);
   }, []);
 
   return (

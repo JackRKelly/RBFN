@@ -10,6 +10,7 @@ const Events: FC<Props> = (props) => {
 
   useEffect(() => {
     document.title = "Events | RBFN";
+    setLoading(true);
   }, []);
 
   return (

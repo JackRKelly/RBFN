@@ -10,6 +10,7 @@ const Speakers: FC<Props> = (props) => {
 
   useEffect(() => {
     document.title = "Speakers | RBFN";
+    setLoading(true);
   }, []);
 
   return (
