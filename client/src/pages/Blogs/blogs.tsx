@@ -57,8 +57,6 @@ const Blogs: FC = () => {
     fetch("http://localhost:1337/blogs").then((res) => {
       res.json().then((json: Array<Blog>) => {
         setBlogs(json);
-        console.log(json);
-        console.log(new Date(json[0].createdAt));
       });
     });
   }, []);
@@ -74,7 +72,7 @@ const Blogs: FC = () => {
             <h6>
               {formatDate(blog.createdAt)} - {differenceDate(blog.createdAt)}
             </h6>
-            <p>{blog.content}</p>
+            <p>{blog.content.substring(0, 120)}...</p>
             <div className="button-container">
               <button>Read More</button>
             </div>
