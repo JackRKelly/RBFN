@@ -11,7 +11,7 @@ const Newsletters: FC<Props> = (props) => {
   useEffect(() => {
     document.title = "Newsletter | RBFN";
     setLoading(true);
-  }, []);
+  }, [setLoading]);
 
   return (
     <main>

@@ -28,17 +28,18 @@ const Blogs: FC<Props> = (props) => {
       res.json().then((json: Event) => {
         setEvent(json);
         setLoading(false);
+        console.log(json);
       });
     });
-  }, [setLoading]);
+  }, [id, setLoading]);
 
   return (
     <main>
       {event ? (
         <div className="blog">
           <img
-            src={`http://localhost:1337${event.banner[0].formats.large.url}`}
-            alt="Banner image"
+            src={`http://localhost:1337${event.banner.formats.large.url}`}
+            alt="Event background"
           />
           <h1>{event.title}</h1>
           <h5>

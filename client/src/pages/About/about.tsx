@@ -11,7 +11,7 @@ const About: FC<Props> = (props) => {
   useEffect(() => {
     document.title = "About | RBFN";
     setLoading(false);
-  }, []);
+  }, [setLoading]);
 
   return (
     <main>

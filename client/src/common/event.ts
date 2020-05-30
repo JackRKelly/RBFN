@@ -31,7 +31,7 @@ interface Banner {
 }
 
 export interface Event {
-  banner: Array<Banner>;
+  banner: Banner;
   content: string;
   title: string;
   createdAt: string;

@@ -38,7 +38,7 @@ const Blogs: FC<Props> = (props) => {
         <div className="blog">
           <img
             src={`http://localhost:1337${blog.banner[0].formats.large.url}`}
-            alt=""
+            alt="Blog background"
           />
           <h1>{blog.title}</h1>
           <h5>

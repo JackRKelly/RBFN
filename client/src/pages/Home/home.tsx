@@ -11,7 +11,7 @@ const Home: FC<Props> = (props) => {
   useEffect(() => {
     document.title = "Home | RBFN";
     setLoading(false);
-  }, []);
+  }, [setLoading]);
 
   return (
     <main>
