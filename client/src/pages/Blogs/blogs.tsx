@@ -1,16 +1,6 @@
 import React, { FC, useEffect, useState } from "react";
+import { Blog } from "../../common/index";
 import "./blogs.scss";
-
-interface Blog {
-  banner: Array<Object>;
-  content: string;
-  title: string;
-  createdAt: string;
-  id: string;
-  updatedAt: string;
-  __v: number;
-  _id: string;
-}
 
 const Blogs: FC = () => {
   const [blogs, setBlogs] = useState<Array<Blog>>();
