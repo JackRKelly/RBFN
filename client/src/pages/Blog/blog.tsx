@@ -1,6 +1,6 @@
 import React, { FC, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { Blog } from "../../common/index";
+import { Blog, formatDate, differenceDate } from "../../common/blog";
 import "./blog.scss";
 
 const Blogs: FC = () => {
@@ -20,9 +20,15 @@ const Blogs: FC = () => {
 
   return (
     <main>
-      <h1>{blog?.title}</h1>
-      <h5>Created </h5>
-      <p>{blog?.content}</p>
+      {blog ? (
+        <>
+          <h1>{blog.title}</h1>
+          <h5>Created {formatDate(blog.createdAt)}</h5>
+          <p>{blog.content}</p>
+        </>
+      ) : (
+        <></>
+      )}
     </main>
   );
 };
