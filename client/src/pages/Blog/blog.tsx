@@ -15,6 +15,24 @@ interface Blog {
 const Blog: FC = () => {
   const [blogs, setBlogs] = useState<Array<Blog>>();
 
+  const formatDate = (date: string) => {
+    let dateObject = new Date(date);
+    const dateTimeFormat = new Intl.DateTimeFormat("en", {
+      year: "numeric",
+      month: "short",
+      day: "2-digit",
+    });
+    const [
+      { value: month },
+      ,
+      { value: day },
+      ,
+      { value: year },
+    ] = dateTimeFormat.formatToParts(dateObject);
+
+    return `${month} ${day}, ${year}`;
+  };
+
   useEffect(() => {
     document.title = "Blog | RBFN";
 
@@ -35,7 +53,7 @@ const Blog: FC = () => {
         {blogs?.map((blog, index) => (
           <li key={index}>
             <h5>{blog.title}</h5>
-            <h6>{blog.createdAt} - 17 Days ago</h6>
+            <h6>{formatDate(blog.createdAt)} - 17 Days ago</h6>
             <p>{blog.content}</p>
             <div className="button-container">
               <button>Read More</button>
