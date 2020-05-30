@@ -3,6 +3,10 @@ import { Blog, formatDate, differenceDate } from "../../common/blog";
 import "./blogs.scss";
 import { Link } from "react-router-dom";
 
+interface Props {
+  setLoading: Dispatch<SetStateAction<boolean>>;
+}
+
 const Blogs: FC = () => {
   const [blogs, setBlogs] = useState<Array<Blog>>();
 
