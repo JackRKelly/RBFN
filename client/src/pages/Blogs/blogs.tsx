@@ -39,7 +39,8 @@ const Blogs: FC<Props> = (props) => {
           <li key={index}>
             <h5>{blog.title}</h5>
             <h6>
-              {formatDate(blog.createdAt)} - {differenceDate(blog.createdAt)}
+              {formatDate(blog.createdAt)} - {differenceDate(blog.createdAt)}{" "}
+              days ago
             </h6>
             <p>{blog.content.substring(0, 120)}...</p>
             <div className="button-container">

@@ -40,8 +40,10 @@ const Events: FC<Props> = (props) => {
           <li key={index}>
             <h5>{event.title}</h5>
             <h6>
-              {formatDate(event.createdAt)} - {differenceDate(event.createdAt)}
+              {formatDate(event.createdAt)} - In {differenceDate(event.date)}{" "}
+              days
             </h6>
+            <h6>{event.address}</h6>
             <p>{event.content.substring(0, 120)}...</p>
             <div className="button-container">
               <Link to={`/event/${event.id}`}>Read More</Link>

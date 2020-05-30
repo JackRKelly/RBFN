@@ -8,7 +8,7 @@ import React, {
 import { useParams } from "react-router-dom";
 import { Blog } from "../../common/blog";
 import "./blog.scss";
-import { formatDate } from "../../common/date";
+import { formatDate, differenceDate } from "../../common/date";
 
 interface Props {
   setLoading: Dispatch<SetStateAction<boolean>>;
@@ -40,7 +40,10 @@ const Blogs: FC<Props> = (props) => {
             alt=""
           />
           <h1>{blog.title}</h1>
-          <h5>Created {formatDate(blog.createdAt)}</h5>
+          <h5>
+            Posted {formatDate(blog.createdAt)} -{" "}
+            {differenceDate(blog.createdAt)} days ago
+          </h5>
           <p>{blog.content}</p>
         </div>
       ) : (

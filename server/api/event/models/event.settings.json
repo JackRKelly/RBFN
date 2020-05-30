@@ -28,6 +28,12 @@
     },
     "address": {
       "type": "string"
+    },
+    "date": {
+      "type": "date"
+    },
+    "time": {
+      "type": "time"
     }
   }
 }
