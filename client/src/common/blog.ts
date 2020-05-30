@@ -31,7 +31,7 @@ interface Banner {
 }
 
 export interface Blog {
-  banner: Array<Banner>;
+  banner: Banner;
   content: string;
   title: string;
   createdAt: string;

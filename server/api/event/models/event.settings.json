@@ -10,10 +10,12 @@
   },
   "attributes": {
     "content": {
-      "type": "richtext"
+      "type": "richtext",
+      "required": true
     },
     "title": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "banner": {
       "model": "file",
@@ -30,10 +32,12 @@
       "type": "string"
     },
     "date": {
-      "type": "date"
+      "type": "date",
+      "required": true
     },
     "time": {
-      "type": "time"
+      "type": "time",
+      "required": true
     }
   }
 }
