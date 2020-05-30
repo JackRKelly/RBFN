@@ -1,7 +1,7 @@
 import React, { FC, useEffect } from "react";
-import "./newsletter.scss";
+import "./newsletters.scss";
 
-const Newsletter: FC = () => {
+const Newsletters: FC = () => {
   useEffect(() => {
     document.title = "Newsletter | RBFN";
   }, []);
@@ -28,4 +28,4 @@ const Newsletter: FC = () => {
   );
 };
 
-export default Newsletter;
+export default Newsletters;

@@ -13,10 +13,10 @@ import Close from "./assets/svg/close.svg";
 import Home from "./pages/Home/home";
 import Connect from "./pages/Connect/connect";
 import About from "./pages/About/about";
-import Newsletter from "./pages/Newsletter/newsletter";
+import Newsletters from "./pages/Newsletters/newsletters";
 import Events from "./pages/Events/events";
 import Speakers from "./pages/Speakers/speakers";
-import Blog from "./pages/Blog/blog";
+import Blogs from "./pages/Blogs/blogs";
 import "./App.scss";
 
 const App: FC = () => {
@@ -94,7 +94,7 @@ const App: FC = () => {
               </NavLink>
 
               <NavLink
-                to="/newsletter"
+                to="/newsletters"
                 activeClassName="active"
                 onClick={() => {
                   setNavigationOpen(false);
@@ -124,7 +124,7 @@ const App: FC = () => {
               </NavLink>
 
               <NavLink
-                to="/blog"
+                to="/blogs"
                 activeClassName="active"
                 onClick={() => {
                   setNavigationOpen(false);
@@ -152,7 +152,7 @@ const App: FC = () => {
               <li>About</li>
             </NavLink>
 
-            <NavLink to="/newsletter" activeClassName="active">
+            <NavLink to="/newsletters" activeClassName="active">
               <li>Newsletter</li>
             </NavLink>
 
@@ -170,7 +170,7 @@ const App: FC = () => {
               <li>Events</li>
             </NavLink>
 
-            <NavLink to="/blog" activeClassName="active">
+            <NavLink to="/blogs" activeClassName="active">
               <li>Blog</li>
             </NavLink>
 
@@ -196,8 +196,8 @@ const App: FC = () => {
                 <Route path="/about">
                   <About />
                 </Route>
-                <Route path="/newsletter">
-                  <Newsletter />
+                <Route path="/newsletters">
+                  <Newsletters />
                 </Route>
                 <Route path="/speakers">
                   <Speakers />
@@ -205,8 +205,8 @@ const App: FC = () => {
                 <Route path="/events">
                   <Events />
                 </Route>
-                <Route path="/blog">
-                  <Blog />
+                <Route path="/blogs">
+                  <Blogs />
                 </Route>
                 <Route path="/connect">
                   <Connect />

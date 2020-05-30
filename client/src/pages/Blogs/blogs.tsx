@@ -1,5 +1,5 @@
 import React, { FC, useEffect, useState } from "react";
-import "./blog.scss";
+import "./blogs.scss";
 
 interface Blog {
   banner: Array<Object>;
@@ -12,7 +12,7 @@ interface Blog {
   _id: string;
 }
 
-const Blog: FC = () => {
+const Blogs: FC = () => {
   const [blogs, setBlogs] = useState<Array<Blog>>();
 
   const differenceDate = (date: string) => {
@@ -85,4 +85,4 @@ const Blog: FC = () => {
   );
 };
 
-export default Blog;
+export default Blogs;
