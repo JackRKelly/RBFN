@@ -6,8 +6,9 @@ import React, {
   SetStateAction,
 } from "react";
 import { useParams } from "react-router-dom";
-import { Blog, formatDate } from "../../common/blog";
+import { Blog } from "../../common/blog";
 import "./blog.scss";
+import { formatDate } from "../../common/date";
 
 interface Props {
   setLoading: Dispatch<SetStateAction<boolean>>;

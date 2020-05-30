@@ -7,6 +7,8 @@ import React, {
 } from "react";
 import { Event } from "../../common/event";
 import "./events.scss";
+import { Link } from "react-router-dom";
+import { differenceDate, formatDate } from "../../common/date";
 
 interface Props {
   setLoading: Dispatch<SetStateAction<boolean>>;
@@ -34,6 +36,18 @@ const Events: FC<Props> = (props) => {
       <h1>Events</h1>
       <h2>Upcoming events:</h2>
       <ul className="upcoming-events">
+        {events?.map((event, index) => (
+          <li key={index}>
+            <h5>{event.title}</h5>
+            <h6>
+              {formatDate(event.createdAt)} - {differenceDate(event.createdAt)}
+            </h6>
+            <p>{event.content.substring(0, 120)}...</p>
+            <div className="button-container">
+              <Link to={`/event/${event.id}`}>Read More</Link>
+            </div>
+          </li>
+        ))}
         <li>
           <h5>Event Name</h5>
           <h6>05/28/2020 - In 17 Days</h6>

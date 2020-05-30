@@ -5,9 +5,10 @@ import React, {
   Dispatch,
   SetStateAction,
 } from "react";
-import { Blog, formatDate, differenceDate } from "../../common/blog";
+import { Blog } from "../../common/blog";
 import "./blogs.scss";
 import { Link } from "react-router-dom";
+import { formatDate, differenceDate } from "../../common/date";
 
 interface Props {
   setLoading: Dispatch<SetStateAction<boolean>>;
