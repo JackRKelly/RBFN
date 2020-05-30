@@ -6,10 +6,12 @@ import {
   NavLink,
 } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
+//SVG
 import SVG from "react-inlinesvg";
 import Logo from "./assets/svg/RBFN.svg";
 import Menu from "./assets/svg/menu.svg";
 import Close from "./assets/svg/close.svg";
+//Pages
 import Home from "./pages/Home/home";
 import Connect from "./pages/Connect/connect";
 import About from "./pages/About/about";
@@ -17,6 +19,8 @@ import Newsletters from "./pages/Newsletters/newsletters";
 import Events from "./pages/Events/events";
 import Speakers from "./pages/Speakers/speakers";
 import Blogs from "./pages/Blogs/blogs";
+//View Specific
+import Blog from "./pages/Blog/blog";
 import "./App.scss";
 
 const App: FC = () => {
@@ -207,6 +211,9 @@ const App: FC = () => {
                 </Route>
                 <Route path="/blogs">
                   <Blogs />
+                </Route>
+                <Route path="/blog/:id">
+                  <Blog />
                 </Route>
                 <Route path="/connect">
                   <Connect />

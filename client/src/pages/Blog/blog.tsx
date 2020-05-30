@@ -4,22 +4,25 @@ import { Blog } from "../../common/index";
 import "./blog.scss";
 
 const Blogs: FC = () => {
-  const [blog, setBlog] = useState();
+  const [blog, setBlog] = useState<Blog>();
   const { id } = useParams();
 
   useEffect(() => {
     document.title = "Blog | RBFN";
 
-    fetch(`http://localhost:1337/blog/${id}`).then((res) => {
+    fetch(`http://localhost:1337/blogs/${id}`).then((res) => {
       res.json().then((json: Blog) => {
         setBlog(json);
+        console.log(json);
       });
     });
   }, []);
 
   return (
     <main>
-      <h1>Blog</h1>
+      <h1>{blog?.title}</h1>
+      <h5>Created </h5>
+      <p>{blog?.content}</p>
     </main>
   );
 };

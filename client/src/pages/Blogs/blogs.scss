@@ -35,8 +35,9 @@ main {
         width: 100%;
         display: flex;
         justify-content: center;
-        button {
+        a {
           background-color: $navy;
+          text-decoration: none;
           color: white;
           border: none;
           font-size: 18px;

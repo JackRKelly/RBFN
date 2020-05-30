@@ -1,6 +1,7 @@
 import React, { FC, useEffect, useState } from "react";
 import { Blog } from "../../common/index";
 import "./blogs.scss";
+import { Link } from "react-router-dom";
 
 const Blogs: FC = () => {
   const [blogs, setBlogs] = useState<Array<Blog>>();
@@ -64,7 +65,7 @@ const Blogs: FC = () => {
             </h6>
             <p>{blog.content.substring(0, 120)}...</p>
             <div className="button-container">
-              <button>Read More</button>
+              <Link to={`/blog/${blog.id}`}>Read More</Link>
             </div>
           </li>
         ))}
