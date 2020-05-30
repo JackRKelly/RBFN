@@ -1,7 +1,13 @@
-import React, { FC, useEffect } from "react";
+import React, { FC, useEffect, Dispatch, SetStateAction } from "react";
 import "./events.scss";
 
-const Events: FC = () => {
+interface Props {
+  setLoading: Dispatch<SetStateAction<boolean>>;
+}
+
+const Events: FC<Props> = (props) => {
+  const { setLoading } = props;
+
   useEffect(() => {
     document.title = "Events | RBFN";
   }, []);

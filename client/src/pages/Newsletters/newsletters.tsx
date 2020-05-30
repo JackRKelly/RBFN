@@ -1,7 +1,13 @@
-import React, { FC, useEffect } from "react";
+import React, { FC, useEffect, Dispatch, SetStateAction } from "react";
 import "./newsletters.scss";
 
-const Newsletters: FC = () => {
+interface Props {
+  setLoading: Dispatch<SetStateAction<boolean>>;
+}
+
+const Newsletters: FC<Props> = (props) => {
+  const { setLoading } = props;
+
   useEffect(() => {
     document.title = "Newsletter | RBFN";
   }, []);

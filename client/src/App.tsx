@@ -205,16 +205,16 @@ const App: FC = () => {
                     <About />
                   </Route>
                   <Route path="/newsletters">
-                    <Newsletters />
+                    <Newsletters setLoading={setLoading} />
                   </Route>
                   <Route path="/speakers">
-                    <Speakers />
+                    <Speakers setLoading={setLoading} />
                   </Route>
                   <Route path="/events">
-                    <Events />
+                    <Events setLoading={setLoading} />
                   </Route>
                   <Route path="/blogs">
-                    <Blogs />
+                    <Blogs setLoading={setLoading} />
                   </Route>
                   <Route path="/blog/:id">
                     <Blog setLoading={setLoading} />

@@ -1,7 +1,13 @@
-import React, { FC, useEffect } from "react";
+import React, { FC, useEffect, Dispatch, SetStateAction } from "react";
 import "./speakers.scss";
 
-const Speakers: FC = () => {
+interface Props {
+  setLoading: Dispatch<SetStateAction<boolean>>;
+}
+
+const Speakers: FC<Props> = (props) => {
+  const { setLoading } = props;
+
   useEffect(() => {
     document.title = "Speakers | RBFN";
   }, []);

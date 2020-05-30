@@ -41,3 +41,16 @@ h6 {
     transition: opacity 150ms linear;
   }
 }
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $lime;
+  cursor: pointer;
+}
