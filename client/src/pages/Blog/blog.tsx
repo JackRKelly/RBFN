@@ -15,6 +15,24 @@ interface Blog {
 const Blog: FC = () => {
   const [blogs, setBlogs] = useState<Array<Blog>>();
 
+  const differenceDate = (date: string) => {
+    const date1 = new Date();
+    const date2 = new Date(date);
+
+    const utc1 = Date.UTC(
+      date1.getFullYear(),
+      date1.getMonth(),
+      date1.getDate()
+    );
+    const utc2 = Date.UTC(
+      date2.getFullYear(),
+      date2.getMonth(),
+      date2.getDate()
+    );
+
+    return `${Math.floor((utc2 - utc1) / (1000 * 60 * 60 * 24))} days ago`;
+  };
+
   const formatDate = (date: string) => {
     let dateObject = new Date(date);
     const dateTimeFormat = new Intl.DateTimeFormat("en", {
@@ -53,7 +71,9 @@ const Blog: FC = () => {
         {blogs?.map((blog, index) => (
           <li key={index}>
             <h5>{blog.title}</h5>
-            <h6>{formatDate(blog.createdAt)} - 17 Days ago</h6>
+            <h6>
+              {formatDate(blog.createdAt)} - {differenceDate(blog.createdAt)}
+            </h6>
             <p>{blog.content}</p>
             <div className="button-container">
               <button>Read More</button>
