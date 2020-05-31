@@ -42,8 +42,12 @@ const Blogs: FC<Props> = (props) => {
           />
           <h1>{blog.title}</h1>
           <h5>
-            Posted {formatDate(blog.createdAt)} -{" "}
-            {differenceDate(blog.createdAt)} days ago
+            {differenceDate(blog.createdAt) * -1 === 1
+              ? "Posted Yesterday"
+              : differenceDate(blog.createdAt) * -1 === 0
+              ? "Posted Today"
+              : `Posted ${formatDate(blog.createdAt)} - 
+              ${differenceDate(blog.createdAt) * -1} days ago`}
           </h5>
           <MarkdownView markdown={blog.content} />
         </div>
