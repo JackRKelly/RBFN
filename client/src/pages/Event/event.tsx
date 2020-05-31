@@ -9,7 +9,7 @@ import { useParams } from "react-router-dom";
 import { Event } from "../../common/event";
 import MarkdownView from "react-showdown";
 import "./event.scss";
-import { formatDate } from "../../common/date";
+import { formatDate, formatTime } from "../../common/date";
 
 interface Props {
   setLoading: Dispatch<SetStateAction<boolean>>;
@@ -43,7 +43,8 @@ const Blogs: FC<Props> = (props) => {
           />
           <h1>{event.title}</h1>
           <h5>
-            {formatDate(event.date)} @ {event.time} | {event.address}
+            {formatDate(event.date)} @ {formatTime(event.time)} |{" "}
+            {event.address}
           </h5>
           <MarkdownView markdown={event.content} />
         </div>

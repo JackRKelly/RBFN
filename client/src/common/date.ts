@@ -25,3 +25,9 @@ export const formatDate = (date: string) => {
 
   return `${month} ${day}, ${year}`;
 };
+
+export const formatTime = (time: string): string => {
+  let timeArray: Array<string | undefined> = time.split(":");
+  timeArray.splice(2, 1);
+  return getFormattedTime(timeArray.join(""));
+};
