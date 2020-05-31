@@ -43,8 +43,7 @@ const Blogs: FC<Props> = (props) => {
           />
           <h1>{event.title}</h1>
           <h5>
-            {formatDate(event.date)} @ {formatTime(event.time)} |{" "}
-            {event.address}
+            {formatDate(event.date)}, {formatTime(event.time)} | {event.address}
           </h5>
           <MarkdownView markdown={event.content} />
         </div>
