@@ -28,7 +28,6 @@ const Event: FC<Props> = (props) => {
       res.json().then((json: EventT) => {
         setEvent(json);
         setLoading(false);
-        console.log(json);
       });
     });
   }, [id, setLoading]);

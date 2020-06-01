@@ -27,7 +27,6 @@ const Speakers: FC<Props> = (props) => {
       res.json().then((json: Array<SpeakerT>) => {
         setSpeakers(json);
         setLoading(false);
-        console.log(json);
       });
     });
   }, [setLoading]);
