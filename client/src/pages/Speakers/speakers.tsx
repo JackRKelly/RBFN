@@ -51,18 +51,6 @@ const Speakers: FC<Props> = (props) => {
             </div>
           </li>
         ))}
-        <li>
-          <h5>Speaker Name</h5>
-          <h6>05/28/2020 - 17 Days ago</h6>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda
-            ipsum quidem sint, odit labore aliquid? Suscipit omnis dolorum nobis
-            ipsam!
-          </p>
-          <div className="button-container">
-            <button>More Details</button>
-          </div>
-        </li>
       </ul>
     </main>
   );
