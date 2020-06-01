@@ -8,7 +8,6 @@ import React, {
 import "./newsletters.scss";
 import { NewsletterT } from "../../common/newsletter";
 import { differenceDate, formatDate } from "../../common/date";
-import { Link } from "react-router-dom";
 
 interface Props {
   setLoading: Dispatch<SetStateAction<boolean>>;
@@ -26,7 +25,6 @@ const Newsletters: FC<Props> = (props) => {
       res.json().then((json: Array<NewsletterT>) => {
         setNewsletters(json);
         setLoading(false);
-        console.log(json);
       });
     });
   }, [setLoading]);
@@ -50,7 +48,11 @@ const Newsletters: FC<Props> = (props) => {
             <h6>{newsletter.address}</h6>
             <p>{newsletter.description.substring(0, 120)}...</p>
             <div className="button-container">
-              <a href={`http://localhost:1337${newsletter.pdf.url}`}>
+              <a
+                href={`http://localhost:1337${newsletter.pdf.url}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 View Newsletter
               </a>
             </div>

@@ -45,7 +45,7 @@ const Events: FC<Props> = (props) => {
             <h6>{event.address}</h6>
             <p>{event.content.substring(0, 120)}...</p>
             <div className="button-container">
-              <Link to={`/event/${event.id}`}>Read More</Link>
+              <Link to={`/event/${event.id}`}>View Event</Link>
             </div>
           </li>
         ))}

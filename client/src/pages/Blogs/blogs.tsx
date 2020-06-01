@@ -48,7 +48,7 @@ const Blogs: FC<Props> = (props) => {
             </h6>
             <p>{blog.content.substring(0, 120)}...</p>
             <div className="button-container">
-              <Link to={`/blog/${blog.id}`}>Read More</Link>
+              <Link to={`/blog/${blog.id}`}>Read Blog</Link>
             </div>
           </li>
         ))}
