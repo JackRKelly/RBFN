@@ -8,14 +8,14 @@ import React, {
 import { useParams } from "react-router-dom";
 import { Event } from "../../common/event";
 import MarkdownView from "react-showdown";
-import "./event.scss";
+import "./speaker.scss";
 import { formatDate, formatTime } from "../../common/date";
 
 interface Props {
   setLoading: Dispatch<SetStateAction<boolean>>;
 }
 
-const Blogs: FC<Props> = (props) => {
+const Speaker: FC<Props> = (props) => {
   const { setLoading } = props;
   const [event, setEvent] = useState<Event>();
   const { id } = useParams();
@@ -36,10 +36,10 @@ const Blogs: FC<Props> = (props) => {
   return (
     <main>
       {event ? (
-        <div className="event">
+        <div className="speaker">
           <img
             src={`http://localhost:1337${event.banner.formats.large.url}`}
-            alt="Event background"
+            alt="Speaker background"
           />
           <h1>{event.title}</h1>
           <h5>
@@ -54,4 +54,4 @@ const Blogs: FC<Props> = (props) => {
   );
 };
 
-export default Blogs;
+export default Speaker;

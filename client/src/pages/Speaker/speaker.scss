@@ -1,0 +1,19 @@
+@import "../../variables.scss";
+
+main {
+  @include main;
+  .blog {
+    img {
+      width: 100%;
+    }
+    h1 {
+      margin: 20px 0 0;
+    }
+    h5 {
+      color: $lightgray;
+      font-size: 18px;
+      margin: 10px 0 15px;
+      font-weight: lighter;
+    }
+  }
+}
