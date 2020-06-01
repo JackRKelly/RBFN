@@ -30,7 +30,7 @@ interface Banner {
   width: number;
 }
 
-export interface EventT {
+export interface SpeakerT {
   banner: Banner;
   content: string;
   title: string;

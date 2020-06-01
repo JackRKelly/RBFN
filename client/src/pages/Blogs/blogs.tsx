@@ -5,7 +5,7 @@ import React, {
   Dispatch,
   SetStateAction,
 } from "react";
-import { Blog } from "../../common/blog";
+import { BlogT } from "../../common/blog";
 import "./blogs.scss";
 import { Link } from "react-router-dom";
 import { formatDate, differenceDate } from "../../common/date";
@@ -16,14 +16,14 @@ interface Props {
 
 const Blogs: FC<Props> = (props) => {
   const { setLoading } = props;
-  const [blogs, setBlogs] = useState<Array<Blog>>();
+  const [blogs, setBlogs] = useState<Array<BlogT>>();
 
   useEffect(() => {
     document.title = "Blog | RBFN";
     setLoading(true);
 
     fetch("http://localhost:1337/blogs").then((res) => {
-      res.json().then((json: Array<Blog>) => {
+      res.json().then((json: Array<BlogT>) => {
         setBlogs(json);
         setLoading(false);
       });

@@ -15,7 +15,7 @@ interface Props {
   setLoading: Dispatch<SetStateAction<boolean>>;
 }
 
-const Event: FC<Props> = (props) => {
+const Blogs: FC<Props> = (props) => {
   const { setLoading } = props;
   const [event, setEvent] = useState<EventT>();
   const { id } = useParams();
@@ -36,7 +36,7 @@ const Event: FC<Props> = (props) => {
   return (
     <main>
       {event ? (
-        <div className="event">
+        <div className="blog">
           <img
             src={`http://localhost:1337${event.banner.formats.large.url}`}
             alt="Event background"
@@ -54,4 +54,4 @@ const Event: FC<Props> = (props) => {
   );
 };
 
-export default Event;
+export default Blogs;

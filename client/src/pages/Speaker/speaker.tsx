@@ -6,7 +6,7 @@ import React, {
   SetStateAction,
 } from "react";
 import { useParams } from "react-router-dom";
-import { Event } from "../../common/event";
+import { SpeakerT } from "../../common/speaker";
 import MarkdownView from "react-showdown";
 import "./speaker.scss";
 import { formatDate, formatTime } from "../../common/date";
@@ -17,15 +17,15 @@ interface Props {
 
 const Speaker: FC<Props> = (props) => {
   const { setLoading } = props;
-  const [speaker, setSpeaker] = useState<Event>();
+  const [speaker, setSpeaker] = useState<SpeakerT>();
   const { id } = useParams();
 
   useEffect(() => {
-    document.title = "Event | RBFN";
+    document.title = "Speaker | RBFN";
     setLoading(true);
 
     fetch(`http://localhost:1337/speakers/${id}`).then((res) => {
-      res.json().then((json: Event) => {
+      res.json().then((json: SpeakerT) => {
         setSpeaker(json);
         setLoading(false);
         console.log(json);
@@ -35,7 +35,7 @@ const Speaker: FC<Props> = (props) => {
 
   return (
     <main>
-      {event ? (
+      {speaker ? (
         <div className="speaker">
           <img
             src={`http://localhost:1337${speaker.banner.formats.large.url}`}

@@ -5,7 +5,7 @@ import React, {
   SetStateAction,
   useState,
 } from "react";
-import { Event } from "../../common/event";
+import { EventT } from "../../common/event";
 import "./events.scss";
 import { Link } from "react-router-dom";
 import { differenceDate, formatDate } from "../../common/date";
@@ -16,14 +16,14 @@ interface Props {
 
 const Events: FC<Props> = (props) => {
   const { setLoading } = props;
-  const [events, setEvents] = useState<Array<Event>>();
+  const [events, setEvents] = useState<Array<EventT>>();
 
   useEffect(() => {
     document.title = "Events | RBFN";
     setLoading(true);
 
     fetch("http://localhost:1337/events").then((res) => {
-      res.json().then((json: Array<Event>) => {
+      res.json().then((json: Array<EventT>) => {
         setEvents(json);
         setLoading(false);
         console.log(json);

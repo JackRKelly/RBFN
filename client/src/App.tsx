@@ -22,6 +22,7 @@ import Blogs from "./pages/Blogs/blogs";
 //View Specific
 import Blog from "./pages/Blog/blog";
 import Event from "./pages/Event/event";
+import Speaker from "./pages/Speaker/speaker";
 import "./App.scss";
 import LoadingOverlay from "./components/LoadingOverlay/LoadingOverlay";
 
@@ -210,6 +211,9 @@ const App: FC = () => {
                   </Route>
                   <Route path="/speakers">
                     <Speakers setLoading={setLoading} />
+                  </Route>
+                  <Route path="/speaker/:id">
+                    <Speaker setLoading={setLoading} />
                   </Route>
                   <Route path="/events">
                     <Events setLoading={setLoading} />

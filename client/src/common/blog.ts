@@ -30,7 +30,7 @@ interface Banner {
   width: number;
 }
 
-export interface Blog {
+export interface BlogT {
   banner: Banner;
   content: string;
   title: string;

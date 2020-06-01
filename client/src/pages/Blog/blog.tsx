@@ -6,7 +6,7 @@ import React, {
   SetStateAction,
 } from "react";
 import { useParams } from "react-router-dom";
-import { Blog } from "../../common/blog";
+import { BlogT } from "../../common/blog";
 import MarkdownView from "react-showdown";
 import "./blog.scss";
 import { formatDate, differenceDate } from "../../common/date";
@@ -17,7 +17,7 @@ interface Props {
 
 const Blogs: FC<Props> = (props) => {
   const { setLoading } = props;
-  const [blog, setBlog] = useState<Blog>();
+  const [blog, setBlog] = useState<BlogT>();
   const { id } = useParams();
 
   useEffect(() => {
@@ -25,7 +25,7 @@ const Blogs: FC<Props> = (props) => {
     setLoading(true);
 
     fetch(`http://localhost:1337/blogs/${id}`).then((res) => {
-      res.json().then((json: Blog) => {
+      res.json().then((json: BlogT) => {
         setBlog(json);
         setLoading(false);
       });
