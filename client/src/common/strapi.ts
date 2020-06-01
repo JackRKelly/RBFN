@@ -1,4 +1,4 @@
-export interface Banner {
+export interface Upload {
   alternativeText: string;
   caption: string;
   createdAt: string;

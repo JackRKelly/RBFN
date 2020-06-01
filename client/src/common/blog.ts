@@ -1,7 +1,7 @@
-import { Banner } from "./strapi";
+import { Upload } from "./strapi";
 
 export interface BlogT {
-  banner: Banner;
+  banner: Upload;
   content: string;
   title: string;
   createdAt: string;

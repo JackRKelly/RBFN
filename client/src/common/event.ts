@@ -1,7 +1,7 @@
-import { Banner } from "./strapi";
+import { Upload } from "./strapi";
 
 export interface EventT {
-  banner: Banner;
+  banner: Upload;
   content: string;
   title: string;
   createdAt: string;

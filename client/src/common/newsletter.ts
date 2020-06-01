@@ -1,12 +1,14 @@
-import { Banner } from "./strapi";
+import { Upload } from "./strapi";
 
 export interface NewsletterT {
-  banner: Banner;
+  banner: Upload;
+  pdf: Upload;
   content: string;
   title: string;
   createdAt: string;
   id: string;
   updatedAt: string;
+  description: string;
   date: string;
   time: string;
   address: string;
