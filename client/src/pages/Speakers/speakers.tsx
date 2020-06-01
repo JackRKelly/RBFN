@@ -41,8 +41,12 @@ const Speakers: FC<Props> = (props) => {
           <li key={index}>
             <h5>{speaker.title}</h5>
             <h6>
-              {formatDate(speaker.createdAt)} -{" "}
-              {differenceDate(speaker.createdAt) * -1} days ago
+              {differenceDate(speaker.createdAt) * -1 === 1
+                ? "Posted Yesterday"
+                : differenceDate(speaker.createdAt) * -1 === 0
+                ? "Posted Today"
+                : `${formatDate(speaker.createdAt)} - 
+              ${differenceDate(speaker.createdAt) * -1} days ago`}
             </h6>
             <h6>{speaker.address}</h6>
             <p>{speaker.content.substring(0, 120)}...</p>

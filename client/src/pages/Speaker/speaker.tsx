@@ -9,7 +9,7 @@ import { useParams } from "react-router-dom";
 import { SpeakerT } from "../../common/speaker";
 import MarkdownView from "react-showdown";
 import "./speaker.scss";
-import { formatDate, formatTime } from "../../common/date";
+import { formatDate, differenceDate } from "../../common/date";
 
 interface Props {
   setLoading: Dispatch<SetStateAction<boolean>>;
@@ -43,8 +43,12 @@ const Speaker: FC<Props> = (props) => {
           />
           <h1>{speaker.title}</h1>
           <h5>
-            {formatDate(speaker.date)}, {formatTime(speaker.time)} |{" "}
-            {speaker.address}
+            {differenceDate(speaker.createdAt) * -1 === 1
+              ? "Posted Yesterday"
+              : differenceDate(speaker.createdAt) * -1 === 0
+              ? "Posted Today"
+              : `${formatDate(speaker.createdAt)} - 
+              ${differenceDate(speaker.createdAt) * -1} days ago`}
           </h5>
           <MarkdownView markdown={speaker.content} />
         </div>
