@@ -17,16 +17,16 @@ interface Props {
 
 const Speaker: FC<Props> = (props) => {
   const { setLoading } = props;
-  const [event, setEvent] = useState<Event>();
+  const [speaker, setSpeaker] = useState<Event>();
   const { id } = useParams();
 
   useEffect(() => {
     document.title = "Event | RBFN";
     setLoading(true);
 
-    fetch(`http://localhost:1337/events/${id}`).then((res) => {
+    fetch(`http://localhost:1337/speakers/${id}`).then((res) => {
       res.json().then((json: Event) => {
-        setEvent(json);
+        setSpeaker(json);
         setLoading(false);
         console.log(json);
       });
@@ -38,14 +38,15 @@ const Speaker: FC<Props> = (props) => {
       {event ? (
         <div className="speaker">
           <img
-            src={`http://localhost:1337${event.banner.formats.large.url}`}
+            src={`http://localhost:1337${speaker.banner.formats.large.url}`}
             alt="Speaker background"
           />
-          <h1>{event.title}</h1>
+          <h1>{speaker.title}</h1>
           <h5>
-            {formatDate(event.date)}, {formatTime(event.time)} | {event.address}
+            {formatDate(speaker.date)}, {formatTime(speaker.time)} |{" "}
+            {speaker.address}
           </h5>
-          <MarkdownView markdown={event.content} />
+          <MarkdownView markdown={speaker.content} />
         </div>
       ) : (
         <></>
