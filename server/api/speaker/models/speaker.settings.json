@@ -9,14 +9,14 @@
     "timestamps": true
   },
   "attributes": {
-    "Content": {
+    "content": {
       "type": "richtext"
     },
-    "Title": {
+    "title": {
       "type": "string"
     },
-    "Banner": {
-      "collection": "file",
+    "banner": {
+      "model": "file",
       "via": "related",
       "allowedTypes": [
         "images",
