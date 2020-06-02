@@ -45,7 +45,6 @@ const Newsletters: FC<Props> = (props) => {
                 : `${formatDate(newsletter.createdAt)} - 
                     ${differenceDate(newsletter.createdAt) * -1} days ago`}
             </h6>
-            <h6>{newsletter.address}</h6>
             <p>{newsletter.description.substring(0, 120)}...</p>
             <div className="button-container">
               <a
