@@ -11,7 +11,7 @@ main {
     grid-gap: 32px;
     li {
       background-color: white;
-      box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 0 10px 2px $shadowgray;
       padding: 15px;
       border-radius: 5px;
       display: flex;
