@@ -16,6 +16,12 @@ const Home: FC<Props> = (props) => {
   return (
     <main>
       <h1>Home</h1>
+      <div className="summary">
+        <h3>Recent Speaker:</h3>
+        <h3>Recent Newsletter:</h3>
+        <h3>Upcoming Event:</h3>
+        <h3>Recent Blog:</h3>
+      </div>
     </main>
   );
 };
