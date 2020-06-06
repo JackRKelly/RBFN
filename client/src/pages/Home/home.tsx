@@ -23,21 +23,22 @@ const Home: FC<Props> = (props) => {
   const [newsletter, setNewsletter] = useState<NewsletterT>();
   const [event, setEvent] = useState<EventT>();
   const [blog, setBlog] = useState<BlogT>();
+  const [loadCount, setLoadCount] = useState(0);
 
   useEffect(() => {
     document.title = "Home | RBFN";
-    setLoading(false);
+    setLoading(true);
 
     fetch("http://localhost:1337/speakers").then((res) => {
       res.json().then((json: Array<SpeakerT>) => {
         setSpeaker(json.reverse()[0]);
-        setLoading(false);
+        setLoadCount((cur) => cur + 1);
       });
     });
     fetch("http://localhost:1337/newsletters").then((res) => {
       res.json().then((json: Array<NewsletterT>) => {
         setNewsletter(json.reverse()[0]);
-        setLoading(false);
+        setLoadCount((cur) => cur + 1);
       });
     });
     fetch("http://localhost:1337/events").then((res) => {
@@ -47,16 +48,22 @@ const Home: FC<Props> = (props) => {
             return differenceDate(a.date) - differenceDate(b.date);
           })[0]
         );
-        setLoading(false);
+        setLoadCount((cur) => cur + 1);
       });
     });
     fetch("http://localhost:1337/blogs").then((res) => {
       res.json().then((json: Array<BlogT>) => {
         setBlog(json.reverse()[0]);
-        setLoading(false);
+        setLoadCount((cur) => cur + 1);
       });
     });
   }, [setLoading]);
+
+  useEffect(() => {
+    if (loadCount === 4) {
+      setLoading(false);
+    }
+  }, [loadCount, setLoading]);
 
   return (
     <main>
