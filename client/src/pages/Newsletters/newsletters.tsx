@@ -23,7 +23,7 @@ const Newsletters: FC<Props> = (props) => {
 
     fetch("http://localhost:1337/newsletters").then((res) => {
       res.json().then((json: Array<NewsletterT>) => {
-        setNewsletters(json);
+        setNewsletters(json.reverse());
         setLoading(false);
       });
     });

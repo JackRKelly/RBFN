@@ -24,7 +24,7 @@ const Speakers: FC<Props> = (props) => {
 
     fetch("http://localhost:1337/speakers").then((res) => {
       res.json().then((json: Array<SpeakerT>) => {
-        setSpeakers(json);
+        setSpeakers(json.reverse());
         setLoading(false);
       });
     });

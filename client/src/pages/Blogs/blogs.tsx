@@ -24,7 +24,7 @@ const Blogs: FC<Props> = (props) => {
 
     fetch("http://localhost:1337/blogs").then((res) => {
       res.json().then((json: Array<BlogT>) => {
-        setBlogs(json);
+        setBlogs(json.reverse());
         setLoading(false);
       });
     });
