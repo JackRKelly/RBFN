@@ -132,10 +132,10 @@ const Home: FC<Props> = (props) => {
             <div className="loading-card"> </div>
           )}
         </div>
-        <div className="recent-blog home-card">
+        <div className="recent-blog">
           <h3>Recent Blog:</h3>
           {blog ? (
-            <div>
+            <div className="blog-card home-card">
               <h5>{blog.title}</h5>
               <h6>
                 {differenceDate(blog.createdAt) * -1 === 1
