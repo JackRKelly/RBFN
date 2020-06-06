@@ -16,13 +16,13 @@ $extralarge: 1500px;
   transition: 0.3s all ease-in-out;
   max-width: 1300px;
   padding: 66px 0 33px 0;
-  @media (max-width: 800px) {
+  @media (max-width: $medium) {
     width: 85%;
   }
   @media (max-width: 500px) {
     width: 87.5%;
   }
-  @media (min-width: 800px) {
+  @media (min-width: $medium) {
     width: 80%;
   }
 }

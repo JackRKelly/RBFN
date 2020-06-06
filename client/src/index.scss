@@ -36,6 +36,14 @@ blockquote {
   }
 }
 
+main {
+  p {
+    @media (min-width: $large) {
+      font-size: 20px;
+    }
+  }
+}
+
 .fade {
   &-appear,
   &-enter {

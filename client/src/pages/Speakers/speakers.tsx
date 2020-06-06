@@ -46,7 +46,6 @@ const Speakers: FC<Props> = (props) => {
                 : `${formatDate(speaker.createdAt)} - 
               ${differenceDate(speaker.createdAt) * -1} days ago`}
             </h6>
-            <h6>{speaker.address}</h6>
             <p>{speaker.content.substring(0, 120)}...</p>
             <div className="button-container">
               <Link to={`/speaker/${speaker.id}`}>View Series</Link>
