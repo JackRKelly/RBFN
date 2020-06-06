@@ -1,4 +1,10 @@
-import React, { FC, useEffect, Dispatch, SetStateAction } from "react";
+import React, {
+  FC,
+  useEffect,
+  Dispatch,
+  SetStateAction,
+  useState,
+} from "react";
 import "./home.scss";
 
 interface Props {
@@ -7,6 +13,10 @@ interface Props {
 
 const Home: FC<Props> = (props) => {
   const { setLoading } = props;
+  const [speaker, setSpeaker] = useState();
+  const [newsletter, setNewsletter] = useState();
+  const [event, setEvent] = useState();
+  const [blog, setBlog] = useState();
 
   useEffect(() => {
     document.title = "Home | RBFN";
