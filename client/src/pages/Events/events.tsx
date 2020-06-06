@@ -35,20 +35,24 @@ const Events: FC<Props> = (props) => {
       <h1>Events</h1>
       <h2>Upcoming events:</h2>
       <ul className="upcoming-events">
-        {events?.map((event, index) => (
-          <li key={index}>
-            <h5>{event.title}</h5>
-            <h6>
-              {formatDate(event.createdAt)} - In {differenceDate(event.date)}{" "}
-              days
-            </h6>
-            <h6>{event.address}</h6>
-            <p>{event.content.substring(0, 120)}...</p>
-            <div className="button-container">
-              <Link to={`/event/${event.id}`}>View Event</Link>
-            </div>
-          </li>
-        ))}
+        {events
+          ?.sort((a, b): number => {
+            return differenceDate(a.date) - differenceDate(b.date);
+          })
+          .map((event, index) => (
+            <li key={index}>
+              <h5>{event.title}</h5>
+              <h6>
+                {formatDate(event.createdAt)} - In {differenceDate(event.date)}{" "}
+                days
+              </h6>
+              <h6>{event.address}</h6>
+              <p>{event.content.substring(0, 120)}...</p>
+              <div className="button-container">
+                <Link to={`/event/${event.id}`}>View Event</Link>
+              </div>
+            </li>
+          ))}
       </ul>
     </main>
   );
