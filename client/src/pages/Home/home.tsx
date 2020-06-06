@@ -10,6 +10,7 @@ import { SpeakerT } from "../../common/speaker";
 import { differenceDate, formatDate } from "../../common/date";
 import { Link } from "react-router-dom";
 import { NewsletterT } from "../../common/newsletter";
+import { EventT } from "../../common/event";
 
 interface Props {
   setLoading: Dispatch<SetStateAction<boolean>>;
@@ -19,7 +20,7 @@ const Home: FC<Props> = (props) => {
   const { setLoading } = props;
   const [speaker, setSpeaker] = useState<SpeakerT>();
   const [newsletter, setNewsletter] = useState<NewsletterT>();
-  const [event, setEvent] = useState();
+  const [event, setEvent] = useState<EventT>();
   const [blog, setBlog] = useState();
 
   useEffect(() => {
@@ -35,6 +36,16 @@ const Home: FC<Props> = (props) => {
     fetch("http://localhost:1337/newsletters").then((res) => {
       res.json().then((json: Array<NewsletterT>) => {
         setNewsletter(json.reverse()[0]);
+        setLoading(false);
+      });
+    });
+    fetch("http://localhost:1337/events").then((res) => {
+      res.json().then((json: Array<EventT>) => {
+        setEvent(
+          json.sort((a, b): number => {
+            return differenceDate(a.date) - differenceDate(b.date);
+          })[0]
+        );
         setLoading(false);
       });
     });
@@ -95,9 +106,44 @@ const Home: FC<Props> = (props) => {
             <div className="loading-card"> </div>
           )}
         </div>
-
-        <h3>Upcoming Event:</h3>
-        <h3>Recent Blog:</h3>
+        <div className="upcoming-event">
+          <h3>Upcoming Event:</h3>
+          {event ? (
+            <div className="event-card">
+              <h5>{event.title}</h5>
+              <h6>
+                {formatDate(event.createdAt)} - In {differenceDate(event.date)}{" "}
+                days
+              </h6>
+              <h6>{event.address}</h6>
+              <p>{event.content.substring(0, 120)}...</p>
+              <div className="button-container">
+                <Link to={`/event/${event.id}`}>View Event</Link>
+              </div>
+            </div>
+          ) : (
+            <div className="loading-card"> </div>
+          )}
+        </div>
+        <div className="recent-blog">
+          <h3>Recent Blog:</h3>
+          {event ? (
+            <div className="event-card">
+              <h5>{event.title}</h5>
+              <h6>
+                {formatDate(event.createdAt)} - In {differenceDate(event.date)}{" "}
+                days
+              </h6>
+              <h6>{event.address}</h6>
+              <p>{event.content.substring(0, 120)}...</p>
+              <div className="button-container">
+                <Link to={`/event/${event.id}`}>View Event</Link>
+              </div>
+            </div>
+          ) : (
+            <div className="loading-card"> </div>
+          )}
+        </div>
       </div>
     </main>
   );
