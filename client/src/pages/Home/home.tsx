@@ -11,6 +11,7 @@ import { differenceDate, formatDate } from "../../common/date";
 import { Link } from "react-router-dom";
 import { NewsletterT } from "../../common/newsletter";
 import { EventT } from "../../common/event";
+import { BlogT } from "../../common/blog";
 
 interface Props {
   setLoading: Dispatch<SetStateAction<boolean>>;
@@ -21,7 +22,7 @@ const Home: FC<Props> = (props) => {
   const [speaker, setSpeaker] = useState<SpeakerT>();
   const [newsletter, setNewsletter] = useState<NewsletterT>();
   const [event, setEvent] = useState<EventT>();
-  const [blog, setBlog] = useState();
+  const [blog, setBlog] = useState<BlogT>();
 
   useEffect(() => {
     document.title = "Home | RBFN";
@@ -49,6 +50,12 @@ const Home: FC<Props> = (props) => {
         setLoading(false);
       });
     });
+    fetch("http://localhost:1337/blogs").then((res) => {
+      res.json().then((json: Array<BlogT>) => {
+        setBlog(json.reverse()[0]);
+        setLoading(false);
+      });
+    });
   }, [setLoading]);
 
   return (
@@ -58,7 +65,7 @@ const Home: FC<Props> = (props) => {
         <div className="recent-speaker">
           <h3>Recent Speaker:</h3>
           {speaker ? (
-            <div className="speaker-card">
+            <div className="speaker-card home-card">
               <h5>{speaker.title}</h5>
               <h6>
                 {differenceDate(speaker.createdAt) * -1 === 1
@@ -81,7 +88,7 @@ const Home: FC<Props> = (props) => {
         <div className="recent-newsletter">
           <h3>Recent Newsletter:</h3>
           {newsletter ? (
-            <div className="newsletter-card">
+            <div className="newsletter-card home-card">
               <h5>{newsletter.title}</h5>
               <h6>
                 {differenceDate(newsletter.createdAt) * -1 === 1
@@ -109,7 +116,7 @@ const Home: FC<Props> = (props) => {
         <div className="upcoming-event">
           <h3>Upcoming Event:</h3>
           {event ? (
-            <div className="event-card">
+            <div className="event-card home-card">
               <h5>{event.title}</h5>
               <h6>
                 {formatDate(event.createdAt)} - In {differenceDate(event.date)}{" "}
@@ -125,19 +132,22 @@ const Home: FC<Props> = (props) => {
             <div className="loading-card"> </div>
           )}
         </div>
-        <div className="recent-blog">
+        <div className="recent-blog home-card">
           <h3>Recent Blog:</h3>
-          {event ? (
-            <div className="event-card">
-              <h5>{event.title}</h5>
+          {blog ? (
+            <div>
+              <h5>{blog.title}</h5>
               <h6>
-                {formatDate(event.createdAt)} - In {differenceDate(event.date)}{" "}
-                days
+                {differenceDate(blog.createdAt) * -1 === 1
+                  ? "Posted Yesterday"
+                  : differenceDate(blog.createdAt) * -1 === 0
+                  ? "Posted Today"
+                  : `${formatDate(blog.createdAt)} - 
+            ${differenceDate(blog.createdAt) * -1} days ago`}
               </h6>
-              <h6>{event.address}</h6>
-              <p>{event.content.substring(0, 120)}...</p>
+              <p>{blog.content.substring(0, 120)}...</p>
               <div className="button-container">
-                <Link to={`/event/${event.id}`}>View Event</Link>
+                <Link to={`/blog/${blog.id}`}>Read Blog</Link>
               </div>
             </div>
           ) : (
