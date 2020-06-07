@@ -7,7 +7,7 @@ import React, {
 } from "react";
 import "./newsletters.scss";
 import { NewsletterT } from "../../common/newsletter";
-import { differenceDate, formatDate } from "../../common/date";
+import { renderDate } from "../../common/date";
 
 interface Props {
   setLoading: Dispatch<SetStateAction<boolean>>;
@@ -37,14 +37,7 @@ const Newsletters: FC<Props> = (props) => {
         {newsletters?.map((newsletter, index) => (
           <li key={index}>
             <h5>{newsletter.title}</h5>
-            <h6>
-              {differenceDate(newsletter.createdAt) * -1 === 1
-                ? "Posted Yesterday"
-                : differenceDate(newsletter.createdAt) * -1 === 0
-                ? "Posted Today"
-                : `${formatDate(newsletter.createdAt)} - 
-                    ${differenceDate(newsletter.createdAt) * -1} days ago`}
-            </h6>
+            <h6>{renderDate(newsletter.createdAt)}</h6>
             <p>{newsletter.description.substring(0, 120)}...</p>
             <div className="button-container">
               <a
