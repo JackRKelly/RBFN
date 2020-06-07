@@ -20,6 +20,10 @@ import DesktopNavigation from "./components/DesktopNavigation";
 //Styles
 import "./App.scss";
 
+interface RenderProps {
+  isMobile: boolean;
+}
+
 const App: FC = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [navigationOpen, setNavigationOpen] = useState(false);
@@ -33,6 +37,20 @@ const App: FC = () => {
     }
   };
 
+  const RenderNavigation: FC<RenderProps> = (props) => {
+    const { isMobile } = props;
+    if (isMobile) {
+      return (
+        <MobileNavigation
+          navigationOpen={navigationOpen}
+          setNavigationOpen={setNavigationOpen}
+        />
+      );
+    } else {
+      return <DesktopNavigation />;
+    }
+  };
+
   useEffect(() => {
     checkMobile();
   }, []);
@@ -43,15 +61,7 @@ const App: FC = () => {
     <>
       <LoadingOverlay loading={loading} />
       <Router>
-        {isMobile ? (
-          <MobileNavigation
-            navigationOpen={navigationOpen}
-            setNavigationOpen={setNavigationOpen}
-          />
-        ) : (
-          <DesktopNavigation />
-        )}
-
+        <RenderNavigation isMobile={isMobile} />
         <Route
           render={({ location }) => (
             <TransitionGroup className="content">
