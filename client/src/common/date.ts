@@ -36,3 +36,14 @@ export const getFormattedTime = (date: string): string => {
     minutes.length < 2 ? `0${minutes}` : minutes
   } ${amPm}`;
 };
+
+export const renderDate = (date: string) => {
+  let difference = differenceDate(date) * -1;
+  if (difference === 1) {
+    return "Posted Yesterday";
+  } else if (difference === 0) {
+    return "Posted Today";
+  } else {
+    return `${difference} days ago`;
+  }
+};

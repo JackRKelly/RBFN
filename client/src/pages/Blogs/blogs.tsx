@@ -8,7 +8,7 @@ import React, {
 import { BlogT } from "../../common/blog";
 import "./blogs.scss";
 import { Link } from "react-router-dom";
-import { formatDate, differenceDate } from "../../common/date";
+import { renderDate } from "../../common/date";
 
 interface Props {
   setLoading: Dispatch<SetStateAction<boolean>>;
@@ -38,14 +38,7 @@ const Blogs: FC<Props> = (props) => {
         {blogs?.map((blog, index) => (
           <li key={index}>
             <h5>{blog.title}</h5>
-            <h6>
-              {differenceDate(blog.createdAt) * -1 === 1
-                ? "Posted Yesterday"
-                : differenceDate(blog.createdAt) * -1 === 0
-                ? "Posted Today"
-                : `${formatDate(blog.createdAt)} - 
-              ${differenceDate(blog.createdAt) * -1} days ago`}
-            </h6>
+            <h6>{renderDate(blog.createdAt)}</h6>
             <p>{blog.content.substring(0, 120)}...</p>
             <div className="button-container">
               <Link to={`/blog/${blog.id}`}>Read Blog</Link>
