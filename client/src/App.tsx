@@ -1,16 +1,5 @@
-import React, {
-  FC,
-  useState,
-  useEffect,
-  Dispatch,
-  SetStateAction,
-} from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  NavLink,
-} from "react-router-dom";
+import React, { FC, useState, useEffect } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 //Pages
 import Home from "./pages/Home/home";
@@ -27,46 +16,9 @@ import Event from "./pages/Event/event";
 import Speaker from "./pages/Speaker/speaker";
 //Navigation
 import MobileNavigation from "./components/MobileNavigation";
+import DesktopNavigation from "./components/DesktopNavigation";
 //Styles
 import "./App.scss";
-
-const DesktopNavigation: FC = () => {
-  return (
-    <nav className="navigation desktop">
-      <ul>
-        <NavLink to="/about" activeClassName="active">
-          <li>About</li>
-        </NavLink>
-
-        <NavLink to="/newsletters" activeClassName="active">
-          <li>Newsletter</li>
-        </NavLink>
-
-        <NavLink to="/speakers" activeClassName="active">
-          <li>Speakers</li>
-        </NavLink>
-
-        <NavLink exact to="/" className="logo">
-          <li>
-            <SVG src={Logo} />
-          </li>
-        </NavLink>
-
-        <NavLink to="/events" activeClassName="active">
-          <li>Events</li>
-        </NavLink>
-
-        <NavLink to="/blogs" activeClassName="active">
-          <li>Blog</li>
-        </NavLink>
-
-        <NavLink to="/connect" activeClassName="active">
-          <li>Connect</li>
-        </NavLink>
-      </ul>
-    </nav>
-  );
-};
 
 const App: FC = () => {
   const [isMobile, setIsMobile] = useState(false);

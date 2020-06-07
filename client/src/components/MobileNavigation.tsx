@@ -1,9 +1,9 @@
 import React, { Dispatch, SetStateAction, FC } from "react";
 import { NavLink } from "react-router-dom";
 import SVG from "react-inlinesvg";
-import Logo from "./assets/svg/RBFN.svg";
-import Menu from "./assets/svg/menu.svg";
-import Close from "./assets/svg/close.svg";
+import Logo from "../assets/svg/RBFN.svg";
+import Menu from "../assets/svg/menu.svg";
+import Close from "../assets/svg/close.svg";
 
 interface MobileProps {
   navigationOpen: boolean;
