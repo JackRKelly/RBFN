@@ -7,7 +7,11 @@ import React, {
 } from "react";
 import "./home.scss";
 import { SpeakerT } from "../../common/speaker";
-import { differenceDate, formatDate } from "../../common/date";
+import {
+  differenceDate,
+  formatDate,
+  getFormattedTime,
+} from "../../common/date";
 import { Link } from "react-router-dom";
 import { NewsletterT } from "../../common/newsletter";
 import { EventT } from "../../common/event";
@@ -125,8 +129,7 @@ const Home: FC<Props> = (props) => {
             <div className="event-card home-card">
               <h5>{event.title}</h5>
               <h6>
-                {formatDate(event.createdAt)} - In {differenceDate(event.date)}{" "}
-                days
+                {formatDate(event.date)}, {getFormattedTime(event.date)} CST
               </h6>
               <h6>{event.address}</h6>
               <p>{event.content.substring(0, 120)}...</p>

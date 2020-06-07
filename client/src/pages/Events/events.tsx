@@ -8,7 +8,11 @@ import React, {
 import { EventT } from "../../common/event";
 import "./events.scss";
 import { Link } from "react-router-dom";
-import { differenceDate, formatDate } from "../../common/date";
+import {
+  differenceDate,
+  formatDate,
+  getFormattedTime,
+} from "../../common/date";
 
 interface Props {
   setLoading: Dispatch<SetStateAction<boolean>>;
@@ -43,8 +47,7 @@ const Events: FC<Props> = (props) => {
             <li key={index}>
               <h5>{event.title}</h5>
               <h6>
-                {formatDate(event.createdAt)} - In {differenceDate(event.date)}{" "}
-                days
+                {formatDate(event.date)}, {getFormattedTime(event.date)} CST
               </h6>
               <h6>{event.address}</h6>
               <p>{event.content.substring(0, 120)}...</p>
