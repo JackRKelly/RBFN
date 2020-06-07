@@ -26,7 +26,6 @@ const Event: FC<Props> = (props) => {
 
     fetch(`http://localhost:1337/events/${id}`).then((res) => {
       res.json().then((json: EventT) => {
-        console.log(json);
         setEvent(json);
         setLoading(false);
         document.title = `${json.title} | RBFN`;
@@ -44,9 +43,9 @@ const Event: FC<Props> = (props) => {
           />
           <h1>{event.title}</h1>
           <h5>
-            {formatDate(event.date)}, {getFormattedTime(event.date)} CST |{" "}
-            {event.address}
+            {formatDate(event.date)}, {getFormattedTime(event.date)} CST
           </h5>
+          <h5>{event.address}</h5>
           <MarkdownView markdown={event.content} />
         </div>
       ) : (

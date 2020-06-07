@@ -19,12 +19,13 @@ import Newsletters from "./pages/Newsletters/newsletters";
 import Events from "./pages/Events/events";
 import Speakers from "./pages/Speakers/speakers";
 import Blogs from "./pages/Blogs/blogs";
+import LoadingOverlay from "./pages/Loading/loading";
 //View Specific
 import Blog from "./pages/Blog/blog";
 import Event from "./pages/Event/event";
 import Speaker from "./pages/Speaker/speaker";
+//Styles
 import "./App.scss";
-import LoadingOverlay from "./components/LoadingOverlay/LoadingOverlay";
 
 const App: FC = () => {
   const [isMobile, setIsMobile] = useState(false);

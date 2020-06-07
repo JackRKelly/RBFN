@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import "./index.scss";
+import "./loading.scss";
 
 interface Props {
   loading: boolean;

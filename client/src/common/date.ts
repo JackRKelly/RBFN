@@ -27,7 +27,6 @@ export const formatDate = (date: string) => {
 };
 
 export const getFormattedTime = (date: string): string => {
-  const time = new Date(date).getTime();
   const hours = new Date(date).getHours();
   const minutes = new Date(date).getMinutes().toString();
   var hoursFinal = ((hours + 11) % 12) + 1;
