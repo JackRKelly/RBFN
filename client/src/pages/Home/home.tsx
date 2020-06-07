@@ -120,7 +120,7 @@ const Home: FC<Props> = (props) => {
           )}
         </div>
         <div className="upcoming-event">
-          <h3>Upcoming Event:</h3>
+          <h3>Next Event:</h3>
           {event ? (
             <div className="event-card home-card">
               <h5>{event.title}</h5>

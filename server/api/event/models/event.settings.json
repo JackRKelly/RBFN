@@ -32,12 +32,7 @@
       "type": "string"
     },
     "date": {
-      "type": "date",
-      "required": true
-    },
-    "time": {
-      "type": "time",
-      "required": true
+      "type": "datetime"
     }
   }
 }

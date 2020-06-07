@@ -9,7 +9,7 @@ import { useParams } from "react-router-dom";
 import { EventT } from "../../common/event";
 import MarkdownView from "react-showdown";
 import "./event.scss";
-import { formatDate, formatTime } from "../../common/date";
+import { formatDate, getFormattedTime } from "../../common/date";
 
 interface Props {
   setLoading: Dispatch<SetStateAction<boolean>>;
@@ -26,6 +26,7 @@ const Event: FC<Props> = (props) => {
 
     fetch(`http://localhost:1337/events/${id}`).then((res) => {
       res.json().then((json: EventT) => {
+        console.log(json);
         setEvent(json);
         setLoading(false);
         document.title = `${json.title} | RBFN`;
@@ -43,7 +44,8 @@ const Event: FC<Props> = (props) => {
           />
           <h1>{event.title}</h1>
           <h5>
-            {formatDate(event.date)}, {formatTime(event.time)} | {event.address}
+            {formatDate(event.date)}, {getFormattedTime(event.date)} CST |{" "}
+            {event.address}
           </h5>
           <MarkdownView markdown={event.content} />
         </div>

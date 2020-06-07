@@ -26,17 +26,14 @@ export const formatDate = (date: string) => {
   return `${month} ${day}, ${year}`;
 };
 
-const getFormattedTime = (fourDigitTime: string): string => {
-  var hours24 = parseInt(fourDigitTime.substring(0, 2));
-  var hours = ((hours24 + 11) % 12) + 1;
-  var amPm = hours24 > 11 ? "PM" : "AM";
-  var minutes = fourDigitTime.substring(2);
+export const getFormattedTime = (date: string): string => {
+  const time = new Date(date).getTime();
+  const hours = new Date(date).getHours();
+  const minutes = new Date(date).getMinutes().toString();
+  var hoursFinal = ((hours + 11) % 12) + 1;
+  var amPm = hours > 11 ? "PM" : "AM";
 
-  return `${hours}:${minutes} ${amPm}`;
-};
-
-export const formatTime = (time: string): string => {
-  let timeArray: Array<string | undefined> = time.split(":");
-  timeArray.splice(2, 1);
-  return getFormattedTime(timeArray.join(""));
+  return `${hoursFinal}:${
+    minutes.length < 2 ? `0${minutes}` : minutes
+  } ${amPm}`;
 };
