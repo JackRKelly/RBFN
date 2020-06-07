@@ -28,6 +28,7 @@ const Blogs: FC<Props> = (props) => {
       res.json().then((json: BlogT) => {
         setBlog(json);
         setLoading(false);
+        document.title = `${json.title} | RBFN`;
       });
     });
   }, [id, setLoading]);

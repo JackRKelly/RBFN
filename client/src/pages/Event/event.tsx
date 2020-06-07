@@ -28,6 +28,7 @@ const Event: FC<Props> = (props) => {
       res.json().then((json: EventT) => {
         setEvent(json);
         setLoading(false);
+        document.title = `${json.title} | RBFN`;
       });
     });
   }, [id, setLoading]);

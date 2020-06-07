@@ -28,6 +28,7 @@ const Speaker: FC<Props> = (props) => {
       res.json().then((json: SpeakerT) => {
         setSpeaker(json);
         setLoading(false);
+        document.title = `${json.title} | RBFN`;
       });
     });
   }, [id, setLoading]);
