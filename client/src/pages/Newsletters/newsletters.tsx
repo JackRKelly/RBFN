@@ -7,7 +7,7 @@ import React, {
 } from "react";
 import "./newsletters.scss";
 import { NewsletterT } from "../../common/newsletter";
-import { renderDate } from "../../common/date";
+import { renderDate, formatDate } from "../../common/date";
 
 interface Props {
   setLoading: Dispatch<SetStateAction<boolean>>;
@@ -37,7 +37,10 @@ const Newsletters: FC<Props> = (props) => {
         {newsletters?.map((newsletter, index) => (
           <li key={index}>
             <h5>{newsletter.title}</h5>
-            <h6>{renderDate(newsletter.createdAt)}</h6>
+            <h6>
+              {formatDate(newsletter.createdAt)} -{" "}
+              {renderDate(newsletter.createdAt)}
+            </h6>
             <p>{newsletter.description.substring(0, 120)}...</p>
             <div className="button-container">
               <a

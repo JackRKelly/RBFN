@@ -8,7 +8,7 @@ import React, {
 import { BlogT } from "../../common/blog";
 import "./blogs.scss";
 import { Link } from "react-router-dom";
-import { renderDate } from "../../common/date";
+import { renderDate, formatDate } from "../../common/date";
 
 interface Props {
   setLoading: Dispatch<SetStateAction<boolean>>;
@@ -38,7 +38,9 @@ const Blogs: FC<Props> = (props) => {
         {blogs?.map((blog, index) => (
           <li key={index}>
             <h5>{blog.title}</h5>
-            <h6>{renderDate(blog.createdAt)}</h6>
+            <h6>
+              {formatDate(blog.createdAt)} - {renderDate(blog.createdAt)}
+            </h6>
             <p>{blog.content.substring(0, 120)}...</p>
             <div className="button-container">
               <Link to={`/blog/${blog.id}`}>Read Blog</Link>

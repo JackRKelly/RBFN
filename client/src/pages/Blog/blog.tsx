@@ -9,7 +9,7 @@ import { useParams } from "react-router-dom";
 import { BlogT } from "../../common/blog";
 import MarkdownView from "react-showdown";
 import "./blog.scss";
-import { renderDate } from "../../common/date";
+import { renderDate, formatDate } from "../../common/date";
 
 interface Props {
   setLoading: Dispatch<SetStateAction<boolean>>;
@@ -42,7 +42,9 @@ const Blogs: FC<Props> = (props) => {
             alt="Blog background"
           />
           <h1>{blog.title}</h1>
-          <h5>{renderDate(blog.createdAt)}</h5>
+          <h5>
+            {formatDate(blog.createdAt)} - {renderDate(blog.createdAt)}
+          </h5>
           <MarkdownView markdown={blog.content} />
         </div>
       ) : (

@@ -7,7 +7,7 @@ import React, {
 } from "react";
 import "./speakers.scss";
 import { SpeakerT } from "../../common/speaker";
-import { renderDate } from "../../common/date";
+import { renderDate, formatDate } from "../../common/date";
 import { Link } from "react-router-dom";
 
 interface Props {
@@ -38,7 +38,9 @@ const Speakers: FC<Props> = (props) => {
         {speakers?.map((speaker, index) => (
           <li key={index}>
             <h5>{speaker.title}</h5>
-            <h6>{renderDate(speaker.createdAt)}</h6>
+            <h6>
+              {formatDate(speaker.createdAt)} - {renderDate(speaker.createdAt)}
+            </h6>
             <p>{speaker.content.substring(0, 120)}...</p>
             <div className="button-container">
               <Link to={`/speaker/${speaker.id}`}>View Series</Link>
