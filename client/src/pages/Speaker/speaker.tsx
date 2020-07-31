@@ -24,7 +24,7 @@ const Speaker: FC<Props> = (props) => {
     document.title = "Speaker | RBFN";
     setLoading(true);
 
-    fetch(`http://localhost:1337/speakers/${id}`).then((res) => {
+    fetch(`http://localhost:2000/speakers/${id}`).then((res) => {
       res.json().then((json: SpeakerT) => {
         setSpeaker(json);
         setLoading(false);
@@ -38,7 +38,7 @@ const Speaker: FC<Props> = (props) => {
       {speaker ? (
         <div className="speaker">
           <img
-            src={`http://localhost:1337${speaker.banner.formats.large.url}`}
+            src={`http://localhost:2000${speaker.banner.formats.large.url}`}
             alt="Speaker background"
           />
           <h1>{speaker.title}</h1>

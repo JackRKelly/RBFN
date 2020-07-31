@@ -22,7 +22,7 @@ const Speakers: FC<Props> = (props) => {
     document.title = "Speakers | RBFN";
     setLoading(true);
 
-    fetch("http://localhost:1337/speakers").then((res) => {
+    fetch("http://localhost:2000/speakers").then((res) => {
       res.json().then((json: Array<SpeakerT>) => {
         setSpeakers(json.reverse());
         setLoading(false);

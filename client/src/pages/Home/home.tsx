@@ -6,16 +6,6 @@ import React, {
   useState,
 } from "react";
 import "./home.scss";
-import { SpeakerT } from "../../common/speaker";
-import {
-  differenceDate,
-  formatDate,
-  getFormattedTime,
-} from "../../common/date";
-import { Link } from "react-router-dom";
-import { NewsletterT } from "../../common/newsletter";
-import { EventT } from "../../common/event";
-import { BlogT } from "../../common/blog";
 
 interface Props {
   setLoading: Dispatch<SetStateAction<boolean>>;
@@ -23,56 +13,32 @@ interface Props {
 
 const Home: FC<Props> = (props) => {
   const { setLoading } = props;
-  const [speaker, setSpeaker] = useState<SpeakerT>();
-  const [newsletter, setNewsletter] = useState<NewsletterT>();
-  const [event, setEvent] = useState<EventT>();
-  const [blog, setBlog] = useState<BlogT>();
-  const [loadCount, setLoadCount] = useState(0);
 
   useEffect(() => {
     document.title = "Home | RBFN";
     setLoading(true);
-
-    fetch("http://localhost:1337/speakers").then((res) => {
-      res.json().then((json: Array<SpeakerT>) => {
-        setSpeaker(json.reverse()[0]);
-        setLoadCount((cur) => cur + 1);
-      });
-    });
-    fetch("http://localhost:1337/newsletters").then((res) => {
-      res.json().then((json: Array<NewsletterT>) => {
-        setNewsletter(json.reverse()[0]);
-        setLoadCount((cur) => cur + 1);
-      });
-    });
-    fetch("http://localhost:1337/events").then((res) => {
-      res.json().then((json: Array<EventT>) => {
-        setEvent(
-          json.sort((a, b): number => {
-            return differenceDate(a.date) - differenceDate(b.date);
-          })[0]
-        );
-        setLoadCount((cur) => cur + 1);
-      });
-    });
-    fetch("http://localhost:1337/blogs").then((res) => {
-      res.json().then((json: Array<BlogT>) => {
-        setBlog(json.reverse()[0]);
-        setLoadCount((cur) => cur + 1);
-      });
-    });
   }, [setLoading]);
 
   useEffect(() => {
-    if (loadCount === 4) {
-      setLoading(false);
-    }
-  }, [loadCount, setLoading]);
+    setLoading(false);
+  }, [setLoading]);
 
   return (
     <main>
-      <h1>Home</h1>
-      <div className="summary">
+      <h1>Why we exist</h1>
+      <p>
+        We are a community of revenue-based financing (and other) practitioners
+        focused on developing our industry and extending our reach to
+        entrepreneurs around the world.
+      </p>
+      <h1>What we do</h1>
+      <p>
+        RBFN aims to connect practitioners in order to accelerate our collective
+        learning and industry in order to make capital available to
+        entrepreneurs in different and more flexible formats.
+      </p>
+
+      {/* <div className="summary">
         <div className="recent-speaker">
           <h3>Recent Speaker:</h3>
           {speaker ? (
@@ -111,7 +77,7 @@ const Home: FC<Props> = (props) => {
               <p>{newsletter.description.substring(0, 120)}...</p>
               <div className="button-container">
                 <a
-                  href={`http://localhost:1337${newsletter.pdf.url}`}
+                  href={`http://localhost:2000${newsletter.pdf.url}`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -163,7 +129,7 @@ const Home: FC<Props> = (props) => {
             <div className="loading-card"> </div>
           )}
         </div>
-      </div>
+      </div> */}
     </main>
   );
 };

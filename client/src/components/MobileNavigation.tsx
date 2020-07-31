@@ -57,16 +57,6 @@ const MobileNavigation: FC<MobileProps> = (props) => {
           </NavLink>
 
           <NavLink
-            to="/about"
-            activeClassName="active"
-            onClick={() => {
-              setNavigationOpen(false);
-            }}
-          >
-            <li>About</li>
-          </NavLink>
-
-          <NavLink
             to="/newsletters"
             activeClassName="active"
             onClick={() => {

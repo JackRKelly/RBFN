@@ -26,7 +26,7 @@ const Events: FC<Props> = (props) => {
     document.title = "Events | RBFN";
     setLoading(true);
 
-    fetch("http://localhost:1337/events").then((res) => {
+    fetch("http://localhost:2000/events").then((res) => {
       res.json().then((json: Array<EventT>) => {
         setEvents(json);
         setLoading(false);

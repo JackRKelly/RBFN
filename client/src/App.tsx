@@ -4,7 +4,6 @@ import { TransitionGroup, CSSTransition } from "react-transition-group";
 //Pages
 import Home from "./pages/Home/home";
 import Connect from "./pages/Connect/connect";
-import About from "./pages/About/about";
 import Newsletters from "./pages/Newsletters/newsletters";
 import Events from "./pages/Events/events";
 import Speakers from "./pages/Speakers/speakers";
@@ -73,9 +72,6 @@ const App: FC = () => {
                 <Switch location={location}>
                   <Route exact path="/">
                     <Home setLoading={setLoading} />
-                  </Route>
-                  <Route path="/about">
-                    <About setLoading={setLoading} />
                   </Route>
                   <Route path="/newsletters">
                     <Newsletters setLoading={setLoading} />

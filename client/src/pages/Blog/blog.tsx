@@ -24,7 +24,7 @@ const Blogs: FC<Props> = (props) => {
     document.title = "Blog | RBFN";
     setLoading(true);
 
-    fetch(`http://localhost:1337/blogs/${id}`).then((res) => {
+    fetch(`http://localhost:2000/blogs/${id}`).then((res) => {
       res.json().then((json: BlogT) => {
         setBlog(json);
         setLoading(false);
@@ -38,7 +38,7 @@ const Blogs: FC<Props> = (props) => {
       {blog ? (
         <div className="blog">
           <img
-            src={`http://localhost:1337${blog.banner.formats.large.url}`}
+            src={`http://localhost:2000${blog.banner.formats.large.url}`}
             alt="Blog background"
           />
           <h1>{blog.title}</h1>

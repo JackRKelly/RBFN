@@ -24,7 +24,7 @@ const Event: FC<Props> = (props) => {
     document.title = "Event | RBFN";
     setLoading(true);
 
-    fetch(`http://localhost:1337/events/${id}`).then((res) => {
+    fetch(`http://localhost:2000/events/${id}`).then((res) => {
       res.json().then((json: EventT) => {
         setEvent(json);
         setLoading(false);
@@ -38,7 +38,7 @@ const Event: FC<Props> = (props) => {
       {event ? (
         <div className="event">
           <img
-            src={`http://localhost:1337${event.banner.formats.large.url}`}
+            src={`http://localhost:2000${event.banner.formats.large.url}`}
             alt="Event background"
           />
           <h1>{event.title}</h1>

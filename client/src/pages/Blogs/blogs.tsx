@@ -22,7 +22,7 @@ const Blogs: FC<Props> = (props) => {
     document.title = "Blog | RBFN";
     setLoading(true);
 
-    fetch("http://localhost:1337/blogs").then((res) => {
+    fetch("http://localhost:2000/blogs").then((res) => {
       res.json().then((json: Array<BlogT>) => {
         setBlogs(json.reverse());
         setLoading(false);

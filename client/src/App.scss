@@ -49,9 +49,28 @@ nav {
   background-color: white;
   z-index: 200;
   box-shadow: 0 0 10px 2px $shadowgray;
+  &.desktop {
+    ul {
+      ul.right {
+        display: flex;
+        justify-content: flex-end;
+        margin: 0;
+      }
+    }
+  }
   &.mobile {
     ul {
       justify-content: space-between;
+      a {
+        &.logo {
+          padding: 5px 15px 15px;
+          &::after {
+            height: 3px;
+            bottom: 9px;
+            left: 50%;
+          }
+        }
+      }
       li.dropdown {
         padding: 0 20px 0;
         cursor: pointer;
@@ -67,28 +86,30 @@ nav {
     padding: 0;
     margin: 0;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     margin: auto;
     width: 95%;
     @include bezier(150ms);
-    @media (min-width: $large) {
-      width: 80%;
+    @media (max-width: $medium) {
+      width: 85%;
     }
-    @media (min-width: $extralarge) {
-      width: 70%;
+    @media (max-width: 500px) {
+      width: 87.5%;
+    }
+    @media (min-width: $medium) {
+      width: 80%;
     }
     li {
       @include bezier(150ms);
     }
     a {
-      padding: 15px 20px;
+      padding: 7.5px 10px;
       text-decoration: none;
       font-size: 20px;
       color: $navy;
       position: relative;
-      font-weight: bold;
-      text-transform: uppercase;
+      font-weight: lighter;
       letter-spacing: 1px;
       @include bezier(150ms);
       &.active {
@@ -102,8 +123,8 @@ nav {
         background-color: $navy;
         width: 0;
         position: absolute;
-        bottom: 9px;
-        height: 3px;
+        bottom: 3px;
+        height: 2px;
         left: 50%;
         transform: translateX(-50%);
         @include bezier(150ms);
@@ -112,7 +133,12 @@ nav {
         width: 85%;
       }
       &.logo {
-        padding: 5px 20px 15px;
+        padding: 5px 20px 15px 0;
+        &::after {
+          height: 3px;
+          bottom: 7px;
+          left: 42%;
+        }
         &.active::after {
           background-color: $lime;
         }

@@ -21,7 +21,7 @@ const Newsletters: FC<Props> = (props) => {
     document.title = "Newsletter | RBFN";
     setLoading(true);
 
-    fetch("http://localhost:1337/newsletters").then((res) => {
+    fetch("http://localhost:2000/newsletters").then((res) => {
       res.json().then((json: Array<NewsletterT>) => {
         setNewsletters(json.reverse());
         setLoading(false);
@@ -44,7 +44,7 @@ const Newsletters: FC<Props> = (props) => {
             <p>{newsletter.description.substring(0, 120)}...</p>
             <div className="button-container">
               <a
-                href={`http://localhost:1337${newsletter.pdf.url}`}
+                href={`http://localhost:2000${newsletter.pdf.url}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
