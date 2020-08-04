@@ -60,7 +60,6 @@ nav {
       justify-content: space-between;
       a {
         &.logo {
-          padding: 5px 15px 15px;
           &::after {
             height: 3px;
             bottom: 9px;
@@ -69,7 +68,6 @@ nav {
         }
       }
       li.dropdown {
-        padding: 0 20px 0;
         cursor: pointer;
         svg {
           height: 35px;

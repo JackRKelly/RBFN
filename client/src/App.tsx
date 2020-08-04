@@ -11,13 +11,11 @@ import Home from "./pages/Home/home";
 import Connect from "./pages/Connect/connect";
 import Newsletters from "./pages/Newsletters/newsletters";
 import Events from "./pages/Events/events";
-import Speakers from "./pages/Speakers/speakers";
 import Blogs from "./pages/Blogs/blogs";
 import LoadingOverlay from "./pages/Loading/loading";
 //View Specific
 import Blog from "./pages/Blog/blog";
 import Event from "./pages/Event/event";
-import Speaker from "./pages/Speaker/speaker";
 //Navigation
 import SVG from "react-inlinesvg";
 import Logo from "./assets/svg/RBFN.svg";
@@ -101,15 +99,6 @@ const App: FC = () => {
                   <li>Newsletter</li>
                 </NavLink>
                 <NavLink
-                  to="/speakers"
-                  activeClassName="active"
-                  onClick={() => {
-                    setNavigationOpen(false);
-                  }}
-                >
-                  <li>Speakers</li>
-                </NavLink>
-                <NavLink
                   to="/events"
                   activeClassName="active"
                   onClick={() => {
@@ -149,12 +138,12 @@ const App: FC = () => {
               </NavLink>
 
               <ul className="right">
-                <NavLink to="/newsletters" activeClassName="active">
-                  <li>Newsletter</li>
+                <NavLink exact to="/" activeClassName="active">
+                  <li>Home</li>
                 </NavLink>
 
-                <NavLink to="/speakers" activeClassName="active">
-                  <li>Speakers</li>
+                <NavLink to="/newsletters" activeClassName="active">
+                  <li>Newsletter</li>
                 </NavLink>
 
                 <NavLink to="/events" activeClassName="active">
@@ -186,12 +175,6 @@ const App: FC = () => {
                   </Route>
                   <Route path="/newsletters">
                     <Newsletters setLoading={setLoading} />
-                  </Route>
-                  <Route path="/speakers">
-                    <Speakers setLoading={setLoading} />
-                  </Route>
-                  <Route path="/speaker/:id">
-                    <Speaker setLoading={setLoading} />
                   </Route>
                   <Route path="/events">
                     <Events setLoading={setLoading} />
