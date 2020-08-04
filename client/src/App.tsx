@@ -1,5 +1,10 @@
 import React, { FC, useState, useEffect } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  NavLink,
+} from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 //Pages
 import Home from "./pages/Home/home";
@@ -14,14 +19,12 @@ import Blog from "./pages/Blog/blog";
 import Event from "./pages/Event/event";
 import Speaker from "./pages/Speaker/speaker";
 //Navigation
-import MobileNavigation from "./components/MobileNavigation";
-import DesktopNavigation from "./components/DesktopNavigation";
+import SVG from "react-inlinesvg";
+import Logo from "./assets/svg/RBFN.svg";
+import Menu from "./assets/svg/menu.svg";
+import Close from "./assets/svg/close.svg";
 //Styles
 import "./App.scss";
-
-interface RenderProps {
-  isMobile: boolean;
-}
 
 const App: FC = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -36,20 +39,6 @@ const App: FC = () => {
     }
   };
 
-  const RenderNavigation: FC<RenderProps> = (props) => {
-    const { isMobile } = props;
-    if (isMobile) {
-      return (
-        <MobileNavigation
-          navigationOpen={navigationOpen}
-          setNavigationOpen={setNavigationOpen}
-        />
-      );
-    } else {
-      return <DesktopNavigation />;
-    }
-  };
-
   useEffect(() => {
     checkMobile();
   }, []);
@@ -60,7 +49,129 @@ const App: FC = () => {
     <>
       <LoadingOverlay loading={loading} />
       <Router>
-        <RenderNavigation isMobile={isMobile} />
+        {isMobile ? (
+          <>
+            <nav className="navigation mobile">
+              <ul>
+                <NavLink exact to="/" className="logo">
+                  <li>
+                    <SVG src={Logo} />
+                  </li>
+                </NavLink>
+                <li
+                  className="dropdown"
+                  onClick={() => {
+                    setNavigationOpen(true);
+                  }}
+                >
+                  <SVG src={Menu} />
+                </li>
+              </ul>
+            </nav>
+            <nav
+              className="navigation-full"
+              style={{ width: navigationOpen ? "100%" : "0%" }}
+            >
+              <ul>
+                <li
+                  className="close"
+                  onClick={() => {
+                    setNavigationOpen(false);
+                  }}
+                >
+                  <SVG src={Close} />
+                </li>
+                <NavLink
+                  exact
+                  to="/"
+                  activeClassName="active"
+                  onClick={() => {
+                    setNavigationOpen(false);
+                  }}
+                >
+                  <li>Home</li>
+                </NavLink>
+                <NavLink
+                  to="/newsletters"
+                  activeClassName="active"
+                  onClick={() => {
+                    setNavigationOpen(false);
+                  }}
+                >
+                  <li>Newsletter</li>
+                </NavLink>
+                <NavLink
+                  to="/speakers"
+                  activeClassName="active"
+                  onClick={() => {
+                    setNavigationOpen(false);
+                  }}
+                >
+                  <li>Speakers</li>
+                </NavLink>
+                <NavLink
+                  to="/events"
+                  activeClassName="active"
+                  onClick={() => {
+                    setNavigationOpen(false);
+                  }}
+                >
+                  <li>Events</li>
+                </NavLink>
+                <NavLink
+                  to="/blogs"
+                  activeClassName="active"
+                  onClick={() => {
+                    setNavigationOpen(false);
+                  }}
+                >
+                  <li>Blog</li>
+                </NavLink>
+                <NavLink
+                  to="/connect"
+                  activeClassName="active"
+                  onClick={() => {
+                    setNavigationOpen(false);
+                  }}
+                >
+                  <li>Connect</li>
+                </NavLink>
+              </ul>
+            </nav>
+          </>
+        ) : (
+          <nav className="navigation desktop">
+            <ul>
+              <NavLink exact to="/" className="logo">
+                <li>
+                  <SVG src={Logo} />
+                </li>
+              </NavLink>
+
+              <ul className="right">
+                <NavLink to="/newsletters" activeClassName="active">
+                  <li>Newsletter</li>
+                </NavLink>
+
+                <NavLink to="/speakers" activeClassName="active">
+                  <li>Speakers</li>
+                </NavLink>
+
+                <NavLink to="/events" activeClassName="active">
+                  <li>Events</li>
+                </NavLink>
+
+                <NavLink to="/blogs" activeClassName="active">
+                  <li>Blog</li>
+                </NavLink>
+
+                <NavLink to="/connect" activeClassName="active">
+                  <li>Connect</li>
+                </NavLink>
+              </ul>
+            </ul>
+          </nav>
+        )}
         <Route
           render={({ location }) => (
             <TransitionGroup className="content">
