@@ -37,6 +37,12 @@ const Events: FC<Props> = (props) => {
   return (
     <main>
       <h1>Events</h1>
+      <p>
+        At RBFN we host a variety of events. We host an annual event for
+        practitioners called the Alternative Capital Summit, and we host monthly
+        Speaker Series webinars featuring practitioners sharing their experience
+        and approach and answering questions from the RBFN community.
+      </p>
       <h2>Upcoming events:</h2>
       <ul className="upcoming-events">
         {events

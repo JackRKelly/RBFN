@@ -22,6 +22,10 @@ h6 {
   color: $navy;
 }
 
+main {
+  @include main;
+}
+
 blockquote {
   background: #f9f9f9;
   border-left: 10px solid #ccc;
@@ -33,14 +37,6 @@ blockquote {
   &:before,
   &:after {
     content: '"';
-  }
-}
-
-main {
-  p {
-    @media (min-width: $large) {
-      font-size: 20px;
-    }
   }
 }
 

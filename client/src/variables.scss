@@ -15,12 +15,16 @@ $extralarge: 1500px;
   transform: translateX(-50%);
   transition: 0.3s all ease-in-out;
   max-width: 1300px;
-  padding: 66px 0 33px 0;
+  padding: 90px 0 33px 0;
+  font-size: 20px;
   @media (max-width: $medium) {
     width: 85%;
+    font-size: 18px;
   }
   @media (max-width: 500px) {
     width: 87.5%;
+    padding: 66px 0 33px 0;
+    font-size: 16px;
   }
   @media (min-width: $medium) {
     width: 80%;

@@ -1,7 +1,6 @@
 @import "../../variables.scss";
 
 main {
-  @include main;
   .upcoming-events {
     margin: 0;
     padding: 0;
@@ -31,7 +30,6 @@ main {
       }
       p {
         margin: 0 0 10px;
-        font-size: 17px;
       }
       .button-container {
         width: 100%;
