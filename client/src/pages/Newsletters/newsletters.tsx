@@ -31,10 +31,15 @@ const Newsletters: FC<Props> = (props) => {
 
   return (
     <main>
-      <h1>Newsletter</h1>
+      <h1>Newsletter Archive</h1>
       <h2>Recent editions:</h2>
       <ul className="recent-editions">
-        {newsletters?.map((newsletter, index) => (
+        <li>August 13th - Headline</li>
+        <li>August 13th - Headline</li>
+        <li>August 13th - Headline</li>
+        <li>August 13th - Headline</li>
+        <li>August 13th - Headline</li>
+        {/* {newsletters?.map((newsletter, index) => (
           <li key={index}>
             <h5>{newsletter.title}</h5>
             <h6>
@@ -52,7 +57,7 @@ const Newsletters: FC<Props> = (props) => {
               </a>
             </div>
           </li>
-        ))}
+        ))} */}
       </ul>
     </main>
   );

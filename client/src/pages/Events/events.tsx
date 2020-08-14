@@ -43,7 +43,7 @@ const Events: FC<Props> = (props) => {
         Speaker Series webinars featuring practitioners sharing their experience
         and approach and answering questions from the RBFN community.
       </p>
-      <h2>Upcoming events:</h2>
+      <h2>Upcoming Events and Speakers:</h2>
       <ul className="upcoming-events">
         {events
           ?.sort((a, b): number => {
@@ -63,6 +63,8 @@ const Events: FC<Props> = (props) => {
             </li>
           ))}
       </ul>
+      <h2>Past Speakers:</h2>
+      <h2>Past Events:</h2>
     </main>
   );
 };

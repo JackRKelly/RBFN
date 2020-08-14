@@ -40,7 +40,7 @@ const Connect: FC<Props> = (props) => {
         <li className="email">
           <div className="card-header">
             <SVG src={Email} />
-            <h5>email@email.com</h5>
+            <h5>revenuebasedworkinggroup@email.com</h5>
           </div>
           <p>Revenue Based Finance Network's Email</p>
           <div className="button-container">

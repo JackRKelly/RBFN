@@ -108,15 +108,6 @@ const App: FC = () => {
                   <li>Events</li>
                 </NavLink>
                 <NavLink
-                  to="/blogs"
-                  activeClassName="active"
-                  onClick={() => {
-                    setNavigationOpen(false);
-                  }}
-                >
-                  <li>Blog</li>
-                </NavLink>
-                <NavLink
                   to="/connect"
                   activeClassName="active"
                   onClick={() => {
@@ -150,10 +141,6 @@ const App: FC = () => {
                   <li>Events</li>
                 </NavLink>
 
-                <NavLink to="/blogs" activeClassName="active">
-                  <li>Blog</li>
-                </NavLink>
-
                 <NavLink to="/connect" activeClassName="active">
                   <li>Connect</li>
                 </NavLink>
@@ -181,12 +168,6 @@ const App: FC = () => {
                   </Route>
                   <Route path="/event/:id">
                     <Event setLoading={setLoading} />
-                  </Route>
-                  <Route path="/blogs">
-                    <Blogs setLoading={setLoading} />
-                  </Route>
-                  <Route path="/blog/:id">
-                    <Blog setLoading={setLoading} />
                   </Route>
                   <Route path="/connect">
                     <Connect setLoading={setLoading} />

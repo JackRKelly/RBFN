@@ -6,7 +6,7 @@ main {
     padding: 0;
     list-style: none;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
     grid-gap: 32px;
     li {
       background-color: white;
