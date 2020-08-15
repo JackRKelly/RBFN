@@ -3,9 +3,13 @@ import React, { FC } from "react";
 const Footer: FC = () => {
   return (
     <footer>
-      <div className="row-1">sdaf</div>
-      <div className="row-2">sdfa</div>
-      <div className="row-3">sd</div>
+      <div className="row">
+        <h3>About</h3>
+      </div>
+      <div className="row">
+        <h3>Contact</h3>
+      </div>
+      <div className="row">sd</div>
     </footer>
   );
 };

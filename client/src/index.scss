@@ -29,6 +29,24 @@ main {
   }
 }
 
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: white;
+  box-shadow: 0 -5px 10px -5px rgba(0, 0, 0, 0.15);
+  .row {
+    width: 33.3333%;
+    padding: 30px;
+
+    @media (max-width: $medium) {
+      width: 100%;
+    }
+    h3 {
+      margin: 0;
+    }
+  }
+}
+
 blockquote {
   background: #f9f9f9;
   border-left: 10px solid #ccc;
