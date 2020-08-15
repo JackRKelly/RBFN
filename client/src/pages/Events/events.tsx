@@ -36,35 +36,38 @@ const Events: FC<Props> = (props) => {
 
   return (
     <main>
-      <h1>Events</h1>
-      <p>
-        At RBFN we host a variety of events. We host an annual event for
-        practitioners called the Alternative Capital Summit, and we host monthly
-        Speaker Series webinars featuring practitioners sharing their experience
-        and approach and answering questions from the RBFN community.
-      </p>
-      <h2>Upcoming Events and Speakers:</h2>
-      <ul className="upcoming-events">
-        {events
-          ?.sort((a, b): number => {
-            return differenceDate(a.date) - differenceDate(b.date);
-          })
-          .map((event, index) => (
-            <li key={index}>
-              <h5>{event.title}</h5>
-              <h6>
-                {formatDate(event.date)}, {getFormattedTime(event.date)} CST
-              </h6>
-              <h6>{event.address}</h6>
-              <p>{event.content.substring(0, 120)}...</p>
-              <div className="button-container">
-                <Link to={`/event/${event.id}`}>View Event</Link>
-              </div>
-            </li>
-          ))}
-      </ul>
-      <h2>Past Speakers:</h2>
-      <h2>Past Events:</h2>
+      <div className="main-wrapper">
+        <h1>Events</h1>
+        <p>
+          At RBFN we host a variety of events. We host an annual event for
+          practitioners called the Alternative Capital Summit, and we host
+          monthly Speaker Series webinars featuring practitioners sharing their
+          experience and approach and answering questions from the RBFN
+          community.
+        </p>
+        <h2>Upcoming Events and Speakers:</h2>
+        <ul className="upcoming-events">
+          {events
+            ?.sort((a, b): number => {
+              return differenceDate(a.date) - differenceDate(b.date);
+            })
+            .map((event, index) => (
+              <li key={index}>
+                <h5>{event.title}</h5>
+                <h6>
+                  {formatDate(event.date)}, {getFormattedTime(event.date)} CST
+                </h6>
+                <h6>{event.address}</h6>
+                <p>{event.content.substring(0, 120)}...</p>
+                <div className="button-container">
+                  <Link to={`/event/${event.id}`}>View Event</Link>
+                </div>
+              </li>
+            ))}
+        </ul>
+        <h2>Past Speakers:</h2>
+        <h2>Past Events:</h2>
+      </div>
     </main>
   );
 };

@@ -35,21 +35,23 @@ const Blogs: FC<Props> = (props) => {
 
   return (
     <main>
-      {blog ? (
-        <div className="blog">
-          <img
-            src={`http://localhost:2000${blog.banner.formats.large.url}`}
-            alt="Blog background"
-          />
-          <h1>{blog.title}</h1>
-          <h5>
-            {formatDate(blog.createdAt)} - {renderDate(blog.createdAt)}
-          </h5>
-          <MarkdownView markdown={blog.content} />
-        </div>
-      ) : (
-        <></>
-      )}
+      <div className="main-wrapper">
+        {blog ? (
+          <div className="blog">
+            <img
+              src={`http://localhost:2000${blog.banner.formats.large.url}`}
+              alt="Blog background"
+            />
+            <h1>{blog.title}</h1>
+            <h5>
+              {formatDate(blog.createdAt)} - {renderDate(blog.createdAt)}
+            </h5>
+            <MarkdownView markdown={blog.content} />
+          </div>
+        ) : (
+          <></>
+        )}
+      </div>
     </main>
   );
 };

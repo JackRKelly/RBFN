@@ -11,12 +11,17 @@ $extralarge: 1500px;
 
 @mixin main {
   position: absolute;
+  width: 100%;
   left: 50%;
   transform: translateX(-50%);
   transition: 0.3s all ease-in-out;
   max-width: 1300px;
   padding: 90px 0 33px 0;
   font-size: 20px;
+}
+
+@mixin width {
+  margin: auto;
   @media (max-width: $medium) {
     width: 85%;
     font-size: 18px;

@@ -35,22 +35,24 @@ const Event: FC<Props> = (props) => {
 
   return (
     <main>
-      {event ? (
-        <div className="event">
-          <img
-            src={`http://localhost:2000${event.banner.formats.large.url}`}
-            alt="Event background"
-          />
-          <h1>{event.title}</h1>
-          <h5>
-            {formatDate(event.date)}, {getFormattedTime(event.date)} CST
-          </h5>
-          <h5>{event.address}</h5>
-          <MarkdownView markdown={event.content} />
-        </div>
-      ) : (
-        <></>
-      )}
+      <div className="main-wrapper">
+        {event ? (
+          <div className="event">
+            <img
+              src={`http://localhost:2000${event.banner.formats.large.url}`}
+              alt="Event background"
+            />
+            <h1>{event.title}</h1>
+            <h5>
+              {formatDate(event.date)}, {getFormattedTime(event.date)} CST
+            </h5>
+            <h5>{event.address}</h5>
+            <MarkdownView markdown={event.content} />
+          </div>
+        ) : (
+          <></>
+        )}
+      </div>
     </main>
   );
 };

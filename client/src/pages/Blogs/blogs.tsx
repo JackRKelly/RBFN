@@ -32,22 +32,24 @@ const Blogs: FC<Props> = (props) => {
 
   return (
     <main>
-      <h1>Blog</h1>
-      <h2>Past blog posts:</h2>
-      <ul className="blog-posts">
-        {blogs?.map((blog, index) => (
-          <li key={index}>
-            <h5>{blog.title}</h5>
-            <h6>
-              {formatDate(blog.createdAt)} - {renderDate(blog.createdAt)}
-            </h6>
-            <p>{blog.content.substring(0, 120)}...</p>
-            <div className="button-container">
-              <Link to={`/blog/${blog.id}`}>Read Blog</Link>
-            </div>
-          </li>
-        ))}
-      </ul>
+      <div className="main-wrapper">
+        <h1>Blog</h1>
+        <h2>Past blog posts:</h2>
+        <ul className="blog-posts">
+          {blogs?.map((blog, index) => (
+            <li key={index}>
+              <h5>{blog.title}</h5>
+              <h6>
+                {formatDate(blog.createdAt)} - {renderDate(blog.createdAt)}
+              </h6>
+              <p>{blog.content.substring(0, 120)}...</p>
+              <div className="button-container">
+                <Link to={`/blog/${blog.id}`}>Read Blog</Link>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
     </main>
   );
 };

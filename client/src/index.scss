@@ -24,6 +24,9 @@ h6 {
 
 main {
   @include main;
+  .main-wrapper {
+    @include width;
+  }
 }
 
 blockquote {
