@@ -7,7 +7,7 @@ import React, {
 } from "react";
 import "./newsletters.scss";
 import { NewsletterT } from "../../common/newsletter";
-import { renderDate, formatDate } from "../../common/date";
+import { formatDate } from "../../common/date";
 import Footer from "../../components/footer";
 
 interface Props {
