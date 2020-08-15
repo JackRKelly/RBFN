@@ -63,11 +63,11 @@ const Connect: FC<Props> = (props) => {
             <p>Revenue Based Finance Network's Facebook group</p>
             <div className="button-container">
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/plugins/group/join/popup/?group_id=600818587170824&source=email_campaign_plugin"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                View Group
+                Join Group
               </a>
             </div>
           </li>

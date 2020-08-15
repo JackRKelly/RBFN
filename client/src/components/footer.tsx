@@ -7,18 +7,8 @@ const Footer: FC = () => {
         <div className="row row-1">
           <h2>About Us</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Dignissimos, dolorem accusantium! Soluta, beatae laborum cumque
-            itaque placeat rerum voluptas reprehenderit blanditiis veritatis
-            tempora aut similique illum mollitia quisquam ab, ea dolores
-            sapiente odit dolorum quidem. Aperiam porro inventore odio dolores
-            non possimus repudiandae voluptatum quam corrupti illum soluta
-            voluptatibus maxime cupiditate, iure aliquam nisi facilis tempore
-            omnis dolorem quidem, odit explicabo dicta repellat nam. Officia,
-            rem consectetur repudiandae dolore numquam ex dignissimos sit est
-            doloribus molestias, quaerat, reiciendis labore vitae aut sequi unde
-            repellendus iste? Quia, accusantium. Accusantium, commodi maiores!
-            Vitae tempore libero impedit cum laudantium ab id sequi harum.
+            Helping entrepreneurs build their companies with sustainable,
+            growth-aligned capital.
           </p>
         </div>
         <div className="row row-2">
