@@ -8,6 +8,7 @@ main {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
     grid-gap: 24px;
+    margin-bottom: 1em;
     li {
       background-color: white;
       box-shadow: 0 0 10px 2px $shadowgray;
@@ -21,6 +22,7 @@ main {
       }
       p {
         margin: 0;
+        font-size: 1.1em;
         text-align: center;
         color: black;
       }

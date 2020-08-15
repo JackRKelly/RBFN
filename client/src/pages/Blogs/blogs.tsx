@@ -9,6 +9,7 @@ import { BlogT } from "../../common/blog";
 import "./blogs.scss";
 import { Link } from "react-router-dom";
 import { renderDate, formatDate } from "../../common/date";
+import Footer from "../../components/footer";
 
 interface Props {
   setLoading: Dispatch<SetStateAction<boolean>>;
@@ -50,6 +51,7 @@ const Blogs: FC<Props> = (props) => {
           ))}
         </ul>
       </div>
+      <Footer />
     </main>
   );
 };

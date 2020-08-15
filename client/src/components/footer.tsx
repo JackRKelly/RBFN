@@ -22,7 +22,7 @@ const Footer: FC = () => {
           </p>
         </div>
         <div className="row row-2">
-          <h2>Contact</h2>
+          <h2>Contact Us</h2>
           <a
             target="_blank"
             rel="noopener noreferrer"
@@ -34,9 +34,6 @@ const Footer: FC = () => {
             <li>Facebook</li>
             <li>Twitter</li>
           </ul>
-        </div>
-        <div className="row row-3">
-          <h2>3rd Column</h2>
         </div>
       </div>
     </footer>

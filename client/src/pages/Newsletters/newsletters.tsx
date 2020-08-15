@@ -8,6 +8,7 @@ import React, {
 import "./newsletters.scss";
 import { NewsletterT } from "../../common/newsletter";
 import { renderDate, formatDate } from "../../common/date";
+import Footer from "../../components/footer";
 
 interface Props {
   setLoading: Dispatch<SetStateAction<boolean>>;
@@ -50,6 +51,7 @@ const Newsletters: FC<Props> = (props) => {
           ))}
         </ul>
       </div>
+      <Footer />
     </main>
   );
 };

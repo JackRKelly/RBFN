@@ -4,6 +4,7 @@ import Twitter from "../../assets/svg/twitter.svg";
 import Facebook from "../../assets/svg/facebook.svg";
 import Email from "../../assets/svg/email.svg";
 import "./connect.scss";
+import Footer from "../../components/footer";
 
 interface Props {
   setLoading: Dispatch<SetStateAction<boolean>>;
@@ -45,7 +46,13 @@ const Connect: FC<Props> = (props) => {
             </div>
             <p>Revenue Based Finance Network's Email</p>
             <div className="button-container">
-              <a href="mailto:email@email.com">Send Email</a>
+              <a
+                href="mailto:email@email.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Send Email
+              </a>
             </div>
           </li>
           <li className="facebook">
@@ -66,6 +73,7 @@ const Connect: FC<Props> = (props) => {
           </li>
         </ul>
       </div>
+      <Footer />
     </main>
   );
 };

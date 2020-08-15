@@ -13,6 +13,7 @@ import {
   formatDate,
   getFormattedTime,
 } from "../../common/date";
+import Footer from "../../components/footer";
 
 interface Props {
   setLoading: Dispatch<SetStateAction<boolean>>;
@@ -68,6 +69,7 @@ const Events: FC<Props> = (props) => {
         <h2>Past Speakers:</h2>
         <h2>Past Events:</h2>
       </div>
+      <Footer />
     </main>
   );
 };
