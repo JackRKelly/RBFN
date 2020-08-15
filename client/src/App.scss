@@ -45,7 +45,7 @@ nav {
   right: 0;
   background-color: white;
   z-index: 200;
-  box-shadow: 0 0 10px 2px $shadowgray;
+  box-shadow: 0 5px 10px -5px $shadowgray;
   &.desktop {
     ul {
       ul.right {
