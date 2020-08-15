@@ -34,6 +34,10 @@ nav.navigation-full {
       padding: 10px;
       margin: 10px;
       text-decoration: none;
+      &::after {
+        bottom: 7px;
+        height: 2px;
+      }
     }
   }
 }

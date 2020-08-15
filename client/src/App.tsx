@@ -115,6 +115,15 @@ const App: FC = () => {
                 >
                   <li>Connect</li>
                 </NavLink>
+                <NavLink
+                  to="/subscribe"
+                  activeClassName="active"
+                  onClick={() => {
+                    setNavigationOpen(false);
+                  }}
+                >
+                  <li>Subscribe</li>
+                </NavLink>
               </ul>
             </nav>
           </>
@@ -142,6 +151,10 @@ const App: FC = () => {
 
                 <NavLink to="/connect" activeClassName="active">
                   <li>Connect</li>
+                </NavLink>
+
+                <NavLink to="/subscribe" activeClassName="active">
+                  <li>Subscribe</li>
                 </NavLink>
               </ul>
             </ul>
