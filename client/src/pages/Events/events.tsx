@@ -46,7 +46,7 @@ const Events: FC<Props> = (props) => {
           experience and approach and answering questions from the RBFN
           community.
         </p>
-        <h2>Upcoming Events and Speakers:</h2>
+        <h2>Upcoming Events:</h2>
         <ul className="upcoming-events">
           {events
             ?.sort((a, b): number => {
