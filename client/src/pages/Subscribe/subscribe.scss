@@ -1,4 +1,11 @@
 @import "../../variables.scss";
 
 main {
+  div.main-wrapper {
+    form.mailchimp-form {
+      div.field-shift {
+        display: none;
+      }
+    }
+  }
 }

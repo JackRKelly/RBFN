@@ -21,81 +21,117 @@ const Subscribe: FC<Props> = (props) => {
     <>
       <main>
         <div className="main-wrapper">
-          <div id="mc_embed_signup">
-            <form
-              action="https://gmail.us3.list-manage.com/subscribe/post?u=4d115fc86e6ac5d0e88ca37ad&amp;id=c270fd9ae4"
-              method="post"
-              id="mc-embedded-subscribe-form"
-              name="mc-embedded-subscribe-form"
-              className="validate"
-              target="_blank"
+          <form
+            action="https://gmail.us3.list-manage.com/subscribe/post"
+            method="POST"
+            target="_blank"
+            className="mailchimp-form"
+          >
+            <input
+              type="hidden"
+              name="u"
+              defaultValue="4d115fc86e6ac5d0e88ca37ad"
+            />
+            <input type="hidden" name="id" defaultValue="c270fd9ae4" />
+            <div
+              className="field-shift"
+              aria-label="Please leave the following three fields empty"
             >
-              <div id="mc_embed_signup_scroll">
-                <h2>Subscribe</h2>
-                <div className="indicates-required">
-                  <span className="asterisk">*</span> indicates required
+              <label htmlFor="b_name">Name: </label>
+              <input
+                type="text"
+                name="b_name"
+                tabIndex={-1}
+                placeholder="Freddie"
+                id="b_name"
+              />
+              <label htmlFor="b_email">Email: </label>
+              <input
+                type="email"
+                name="b_email"
+                tabIndex={-1}
+                placeholder="youremail@gmail.com"
+                id="b_email"
+              />
+              <label htmlFor="b_comment">Comment: </label>
+              <textarea
+                name="b_comment"
+                tabIndex={-1}
+                placeholder="Please comment"
+                id="b_comment"
+                defaultValue={""}
+              />
+            </div>
+            <div id="mergeTable" className="mergeTable">
+              <div
+                className="mergeRow dojoDndItem mergeRow-text"
+                id="mergeRow-1"
+              >
+                <label htmlFor="MERGE1">First Name</label>
+                <div className="field-group">
+                  <input type="text" name="MERGE1" id="MERGE1" size={25} />
                 </div>
-                <div className="mc-field-group">
-                  <label htmlFor="mce-FNAME">First Name </label>
-                  <input
-                    type="text"
-                    value=""
-                    name="FNAME"
-                    className=""
-                    id="mce-FNAME"
-                  />
+              </div>
+              <div
+                className="mergeRow dojoDndItem mergeRow-text"
+                id="mergeRow-4"
+              >
+                <label htmlFor="MERGE4">Last Name</label>
+                <div className="field-group">
+                  <input type="text" name="MERGE4" id="MERGE4" size={25} />
                 </div>
-                <div className="mc-field-group">
-                  <label htmlFor="mce-LNAME">Last Name </label>
-                  <input
-                    type="text"
-                    value=""
-                    name="LNAME"
-                    className=""
-                    id="mce-LNAME"
-                  />
-                </div>
-                <div className="mc-field-group">
-                  <label htmlFor="mce-EMAIL">
-                    Email Address <span className="asterisk">*</span>
-                  </label>
+              </div>
+              <div
+                className="mergeRow dojoDndItem mergeRow-email"
+                id="mergeRow-0"
+              >
+                <label htmlFor="MERGE0">
+                  Email Address <span className="req asterisk">*</span>
+                </label>
+                <div className="field-group">
                   <input
                     type="email"
-                    value=""
-                    name="EMAIL"
-                    className="required email"
-                    id="mce-EMAIL"
+                    autoCapitalize="off"
+                    autoCorrect="off"
+                    name="MERGE0"
+                    id="MERGE0"
+                    size={25}
                   />
                 </div>
-                <div className="mc-field-group">
-                  <label htmlFor="mce-CNAME">
-                    Company Name <span className="asterisk">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    value=""
-                    name="CNAME"
-                    className="required"
-                    id="mce-CNAME"
-                  />
+              </div>
+              <div
+                className="mergeRow dojoDndItem mergeRow-text"
+                id="mergeRow-2"
+              >
+                <label htmlFor="MERGE2">
+                  Company Name <span className="req asterisk">*</span>
+                </label>
+                <div className="field-group">
+                  <input type="text" name="MERGE2" id="MERGE2" size={25} />
                 </div>
-                <div className="mc-field-group">
-                  <label htmlFor="mce-TITLE">Title </label>
-                  <input
-                    type="text"
-                    value=""
-                    name="TITLE"
-                    className=""
-                    id="mce-TITLE"
-                  />
+              </div>
+              <div
+                className="mergeRow dojoDndItem mergeRow-text"
+                id="mergeRow-7"
+              >
+                <label htmlFor="MERGE7">Title</label>
+                <div className="field-group">
+                  <input type="text" name="MERGE7" id="MERGE7" size={25} />
                 </div>
-                <div className="mc-field-group">
-                  <label htmlFor="mce-TYPE">
-                    Are you a(n)... <span className="asterisk">*</span>
-                  </label>
-                  <select name="TYPE" className="required" id="mce-TYPE">
-                    <option value=""></option>
-                    <option value="Fund Manager (you invest through a fund)">
+              </div>
+              <div
+                className="mergeRow dojoDndItem mergeRow-dropdown"
+                id="mergeRow-5"
+              >
+                <label htmlFor="MERGE5">
+                  Are you a(n)... <span className="req asterisk">*</span>
+                </label>
+                <div className="field-group">
+                  <select className="select-small" id="MERGE5" name="MERGE5">
+                    <option
+                      value="Fund Manager (you invest through a fund)"
+                      selected
+                    >
                       Fund Manager (you invest through a fund)
                     </option>
                     <option value="Ecosystem Builder">Ecosystem Builder</option>
@@ -110,58 +146,45 @@ const Subscribe: FC<Props> = (props) => {
                     </option>
                     <option value="Other">Other</option>
                   </select>
+                  <div className="field-help">
+                    Describe how you fit into the ecosystem
+                  </div>
                 </div>
-                <div className="mc-field-group">
-                  <label htmlFor="mce-RBFYESNO">
-                    Are you using Revenue Based Financing?
-                    <span className="asterisk">*</span>
-                  </label>
-                  <select
-                    name="RBFYESNO"
-                    className="required"
-                    id="mce-RBFYESNO"
-                  >
-                    <option value=""></option>
-                    <option value="Yes">Yes</option>
+              </div>
+              <div
+                className="mergeRow dojoDndItem mergeRow-dropdown"
+                id="mergeRow-6"
+              >
+                <label htmlFor="MERGE6">
+                  Are you using Revenue Based Financing?{" "}
+                  <span className="req asterisk">*</span>
+                </label>
+                <div className="field-group">
+                  <select className="select-small" id="MERGE6" name="MERGE6">
+                    <option value="Yes" selected>
+                      Yes
+                    </option>
                     <option value="No">No</option>
                     <option value="I'm not sure">I'm not sure</option>
                   </select>
                 </div>
-                <div id="mce-responses" className="clear">
-                  <div
-                    className="response"
-                    id="mce-error-response"
-                    style={{ display: "none" }}
-                  ></div>
-                  <div
-                    className="response"
-                    id="mce-success-response"
-                    style={{ display: "none" }}
-                  ></div>
-                </div>
-                <div
-                  style={{ position: "absolute", left: "-5000px;" }}
-                  aria-hidden="true"
-                >
-                  <input
-                    type="text"
-                    name="b_4d115fc86e6ac5d0e88ca37ad_c270fd9ae4"
-                    tabIndex={-1}
-                    value=""
-                  />
-                </div>
-                <div className="clear">
-                  <input
-                    type="submit"
-                    value="Subscribe"
-                    name="subscribe"
-                    id="mc-embedded-subscribe"
-                    className="button"
-                  />
-                </div>
               </div>
-            </form>
-          </div>
+            </div>
+            <div className="submit_container clear">
+              <input
+                type="submit"
+                className="formEmailButton"
+                name="submit"
+                defaultValue="Subscribe"
+              />
+            </div>
+            <input
+              type="hidden"
+              name="ht"
+              defaultValue="c39c23ff6d24057c32937d7637afc901c27fcf15:MTU5NzUyOTEwNC42MzY="
+            />
+            <input type="hidden" name="mc_signupsource" defaultValue="hosted" />
+          </form>
         </div>
       </main>
     </>
