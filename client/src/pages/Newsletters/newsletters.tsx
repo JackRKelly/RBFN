@@ -34,11 +34,6 @@ const Newsletters: FC<Props> = (props) => {
       <h1>Newsletter Archive</h1>
       <h2>Recent editions:</h2>
       <ul className="recent-editions">
-        <li>August 13th - Headline</li>
-        <li>August 13th - Headline</li>
-        <li>August 13th - Headline</li>
-        <li>August 13th - Headline</li>
-        <li>August 13th - Headline</li>
         {/* {newsletters?.map((newsletter, index) => (
           <li key={index}>
             <h5>{newsletter.title}</h5>
@@ -58,6 +53,15 @@ const Newsletters: FC<Props> = (props) => {
             </div>
           </li>
         ))} */}
+        {newsletters?.map((newsletter, index) => (
+          <li key={index}>
+            <a href={newsletter.link} target="_blank" rel="noopener noreferrer">
+              <p>
+                {formatDate(newsletter.createdAt)} - {newsletter.title}
+              </p>
+            </a>
+          </li>
+        ))}
       </ul>
     </main>
   );

@@ -2,7 +2,7 @@ import { Upload } from "./strapi";
 
 export interface NewsletterT {
   banner: Upload;
-  pdf: Upload;
+  link: string;
   content: string;
   title: string;
   createdAt: string;

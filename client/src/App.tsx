@@ -11,10 +11,8 @@ import Home from "./pages/Home/home";
 import Connect from "./pages/Connect/connect";
 import Newsletters from "./pages/Newsletters/newsletters";
 import Events from "./pages/Events/events";
-import Blogs from "./pages/Blogs/blogs";
 import LoadingOverlay from "./pages/Loading/loading";
 //View Specific
-import Blog from "./pages/Blog/blog";
 import Event from "./pages/Event/event";
 //Navigation
 import SVG from "react-inlinesvg";

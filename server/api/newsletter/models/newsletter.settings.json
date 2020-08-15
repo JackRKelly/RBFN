@@ -12,19 +12,11 @@
     "title": {
       "type": "string"
     },
-    "pdf": {
-      "model": "file",
-      "via": "related",
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos"
-      ],
-      "plugin": "upload",
-      "required": false
-    },
     "description": {
       "type": "text"
+    },
+    "link": {
+      "type": "string"
     }
   }
 }
