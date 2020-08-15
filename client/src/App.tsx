@@ -21,6 +21,7 @@ import Menu from "./assets/svg/menu.svg";
 import Close from "./assets/svg/close.svg";
 //Styles
 import "./App.scss";
+import Subscribe from "./pages/Subscribe/subscribe";
 
 const App: FC = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -163,6 +164,9 @@ const App: FC = () => {
                   </Route>
                   <Route path="/events">
                     <Events setLoading={setLoading} />
+                  </Route>
+                  <Route path="/subscribe">
+                    <Subscribe setLoading={setLoading} />
                   </Route>
                   <Route path="/event/:id">
                     <Event setLoading={setLoading} />
