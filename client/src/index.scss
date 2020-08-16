@@ -56,13 +56,32 @@ footer {
         h2 {
           margin-bottom: 16px;
         }
+        a.email {
+          text-decoration: none;
+          color: $lime;
+          @include bezier(250ms);
+          &:hover {
+            text-decoration: underline;
+            color: $navy;
+          }
+        }
         ul {
           list-style: none;
           padding: 0;
           margin: 16px 0 0 0;
           li {
             display: inline-block;
-            padding-right: 10px;
+            padding-right: 16px;
+            a {
+              svg {
+                fill: $navy;
+                @include bezier(150ms);
+                &:hover {
+                  fill: $lime;
+                  transform: scale(1.1);
+                }
+              }
+            }
           }
         }
       }

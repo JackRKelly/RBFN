@@ -6,11 +6,8 @@ main {
     margin: 0;
     list-style: none;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 32px;
-    @media (max-width: $large) {
-      grid-template-columns: repeat(2, 1fr);
-    }
     @media (max-width: $medium) {
       grid-template-columns: repeat(1, 1fr);
     }
@@ -54,6 +51,17 @@ main {
         }
         a {
           background-color: black;
+        }
+      }
+      &.subscribe {
+        svg {
+          fill: $lime;
+        }
+        h5 {
+          color: $lime;
+        }
+        a {
+          background-color: $lime;
         }
       }
       .card-header {

@@ -11,6 +11,7 @@ import Home from "./pages/Home/home";
 import Connect from "./pages/Connect/connect";
 import Newsletters from "./pages/Newsletters/newsletters";
 import Events from "./pages/Events/events";
+import Subscribe from "./pages/Subscribe/subscribe";
 import LoadingOverlay from "./pages/Loading/loading";
 //View Specific
 import Event from "./pages/Event/event";
@@ -21,7 +22,10 @@ import Menu from "./assets/svg/menu.svg";
 import Close from "./assets/svg/close.svg";
 //Styles
 import "./App.scss";
-import Subscribe from "./pages/Subscribe/subscribe";
+//Icons
+import Facebook from "./assets/svg/facebook.svg";
+import Twitter from "./assets/svg/twitter.svg";
+import Email from "./assets/svg/email.svg";
 
 const App: FC = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -69,7 +73,36 @@ const App: FC = () => {
               className="navigation-full"
               style={{ width: navigationOpen ? "100%" : "0%" }}
             >
-              <ul>
+              <ul className="links">
+                <li>
+                  <a
+                    href="https://www.facebook.com/plugins/group/join/popup/?group_id=600818587170824&source=email_campaign_plugin"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <SVG src={Facebook}></SVG>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://twitter.com/keithkcvc"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <SVG src={Twitter}></SVG>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="mailto:info@rbfnetwork.org"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <SVG src={Email}></SVG>
+                  </a>
+                </li>
+              </ul>
+              <ul className="pages">
                 <li
                   className="close"
                   onClick={() => {

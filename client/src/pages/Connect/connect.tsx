@@ -3,6 +3,7 @@ import SVG from "react-inlinesvg";
 import Twitter from "../../assets/svg/twitter.svg";
 import Facebook from "../../assets/svg/facebook.svg";
 import Email from "../../assets/svg/email.svg";
+import Plus from "../../assets/svg/plus.svg";
 import "./connect.scss";
 import Footer from "../../components/footer";
 
@@ -42,12 +43,12 @@ const Connect: FC<Props> = (props) => {
           <li className="email">
             <div className="card-header">
               <SVG src={Email} />
-              <h5>email@email.com</h5>
+              <h5>info@rbfnetwork.org</h5>
             </div>
             <p>Revenue Based Finance Network's Email</p>
             <div className="button-container">
               <a
-                href="mailto:email@email.com"
+                href="mailto:info@rbfnetwork.org"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -69,6 +70,16 @@ const Connect: FC<Props> = (props) => {
               >
                 Join Group
               </a>
+            </div>
+          </li>
+          <li className="subscribe">
+            <div className="card-header">
+              <SVG src={Plus} />
+              <h5>RBWG Newsletter</h5>
+            </div>
+            <p>Revenue Based Finance Network's Newsletter</p>
+            <div className="button-container">
+              <a href="/subscribe">Subscribe</a>
             </div>
           </li>
         </ul>

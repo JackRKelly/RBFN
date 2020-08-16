@@ -6,6 +6,24 @@ main {
       div.field-shift {
         display: none;
       }
+      div.mergeTable {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        div.mergeRow {
+          width: 47%;
+          @media (max-width: $medium) {
+            width: 100%;
+          }
+          label {
+          }
+          div.field-group {
+            input {
+              width: 100%;
+            }
+          }
+        }
+      }
     }
   }
 }

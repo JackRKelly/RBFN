@@ -21,6 +21,7 @@ const Subscribe: FC<Props> = (props) => {
     <>
       <main>
         <div className="main-wrapper">
+          <h1>Subscribe to RBFN</h1>
           <form
             action="https://gmail.us3.list-manage.com/subscribe/post"
             method="POST"
@@ -128,10 +129,7 @@ const Subscribe: FC<Props> = (props) => {
                 </label>
                 <div className="field-group">
                   <select className="select-small" id="MERGE5" name="MERGE5">
-                    <option
-                      value="Fund Manager (you invest through a fund)"
-                      selected
-                    >
+                    <option value="Fund Manager (you invest through a fund)">
                       Fund Manager (you invest through a fund)
                     </option>
                     <option value="Ecosystem Builder">Ecosystem Builder</option>
@@ -161,9 +159,7 @@ const Subscribe: FC<Props> = (props) => {
                 </label>
                 <div className="field-group">
                   <select className="select-small" id="MERGE6" name="MERGE6">
-                    <option value="Yes" selected>
-                      Yes
-                    </option>
+                    <option value="Yes">Yes</option>
                     <option value="No">No</option>
                     <option value="I'm not sure">I'm not sure</option>
                   </select>
