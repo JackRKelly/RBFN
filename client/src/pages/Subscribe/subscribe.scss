@@ -6,20 +6,48 @@ main {
       div.field-shift {
         display: none;
       }
+      div.submit_container {
+        display: flex;
+        justify-content: flex-end;
+        button {
+          background-color: $navy;
+          color: white;
+          border: none;
+          font-size: 18px;
+          border-radius: 5px;
+          text-decoration: none;
+          padding: 6px 16px;
+          font-family: "Josefin Sans", sans-serif;
+          cursor: pointer;
+          outline: none;
+          @include bezier(200ms);
+          @include button-hover;
+        }
+      }
       div.mergeTable {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
         div.mergeRow {
           width: 47%;
+          margin-bottom: 15px;
           @media (max-width: $medium) {
             width: 100%;
           }
           label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: $navy;
           }
           div.field-group {
-            input {
+            input,
+            select {
               width: 100%;
+              padding: 5px;
+              border: solid 1px $navy;
+              box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1);
+              border-radius: 2px;
             }
           }
         }
