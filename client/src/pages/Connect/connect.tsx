@@ -6,6 +6,7 @@ import Email from "../../assets/svg/email.svg";
 import Plus from "../../assets/svg/plus.svg";
 import "./connect.scss";
 import Footer from "../../components/footer";
+import { Link } from "react-router-dom";
 
 interface Props {
   setLoading: Dispatch<SetStateAction<boolean>>;
@@ -79,7 +80,7 @@ const Connect: FC<Props> = (props) => {
             </div>
             <p>Revenue Based Finance Network's Newsletter</p>
             <div className="button-container">
-              <a href="/subscribe">Subscribe</a>
+              <Link to="/subscribe">Subscribe</Link>
             </div>
           </li>
         </ul>

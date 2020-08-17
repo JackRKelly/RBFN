@@ -51,8 +51,12 @@ nav.navigation-full {
       cursor: pointer;
       padding: 10px;
       margin: 10px 0 20px;
+      @include bezier(150ms);
       svg {
         fill: $navy;
+      }
+      &:hover {
+        transform: scale(1.15);
       }
     }
     a {

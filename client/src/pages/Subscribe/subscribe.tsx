@@ -69,7 +69,9 @@ const Subscribe: FC<Props> = (props) => {
           </div>
           <div id="mergeTable" className="mergeTable">
             <div className="mergeRow dojoDndItem mergeRow-text" id="mergeRow-1">
-              <label htmlFor="MERGE1">First Name</label>
+              <label htmlFor="MERGE1">
+                First Name <span className="req asterisk">*</span>
+              </label>
               <div className="field-group">
                 <input
                   type="text"
@@ -81,7 +83,9 @@ const Subscribe: FC<Props> = (props) => {
               </div>
             </div>
             <div className="mergeRow dojoDndItem mergeRow-text" id="mergeRow-4">
-              <label htmlFor="MERGE4">Last Name</label>
+              <label htmlFor="MERGE4">
+                Last Name <span className="req asterisk">*</span>
+              </label>
               <div className="field-group">
                 <input
                   type="text"
@@ -126,7 +130,9 @@ const Subscribe: FC<Props> = (props) => {
               </div>
             </div>
             <div className="mergeRow dojoDndItem mergeRow-text" id="mergeRow-7">
-              <label htmlFor="MERGE7">Title</label>
+              <label htmlFor="MERGE7">
+                Title <span className="req asterisk">*</span>
+              </label>
               <div className="field-group">
                 <input
                   type="text"
