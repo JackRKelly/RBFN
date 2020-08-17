@@ -26,6 +26,25 @@ export const formatDate = (date: string) => {
   return `${month} ${day}, ${year}`;
 };
 
+export const formatNoTimezoneLongDate = (date: string) => {
+  let dateObject = new Date(`${date} CST`);
+  const dateTimeFormat = new Intl.DateTimeFormat("en", {
+    year: "numeric",
+    month: "long",
+    day: "2-digit",
+    timeZone: "America/Chicago",
+  });
+  const [
+    { value: month },
+    ,
+    { value: day },
+    ,
+    { value: year },
+  ] = dateTimeFormat.formatToParts(dateObject);
+
+  return `${month} ${day}, ${year}`;
+};
+
 export const getFormattedTime = (date: string): string => {
   const hours = new Date(date).getHours();
   const minutes = new Date(date).getMinutes().toString();
