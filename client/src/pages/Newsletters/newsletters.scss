@@ -19,12 +19,17 @@ main {
       justify-content: space-between;
       a {
         text-decoration: none;
-      }
-      p {
-        margin: 0;
-        font-size: 1.1em;
-        text-align: center;
-        color: black;
+        p {
+          margin: 0;
+          font-size: 1.1em;
+          text-align: center;
+          color: black;
+          @include bezier(150ms);
+          &:hover {
+            color: $green;
+            text-decoration: underline;
+          }
+        }
       }
     }
   }

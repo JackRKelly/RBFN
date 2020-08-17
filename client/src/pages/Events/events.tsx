@@ -59,7 +59,10 @@ const Events: FC<Props> = (props) => {
         <h2>Upcoming Events:</h2>
         <ul className="upcoming-events">
           {events
-            ?.sort((a, b): number => {
+            ?.filter((event) => {
+              return differenceDate(event.date) > 0;
+            })
+            .sort((a, b): number => {
               return differenceDate(a.date) - differenceDate(b.date);
             })
             .map((event, index) => (
@@ -82,6 +85,7 @@ const Events: FC<Props> = (props) => {
             ?.sort((a, b): number => {
               return differenceDate(a.date) - differenceDate(b.date);
             })
+            .reverse()
             .map((speaker, index) => (
               <li key={index}>
                 <img
@@ -104,6 +108,28 @@ const Events: FC<Props> = (props) => {
             ))}
         </ul>
         <h2>Past Events:</h2>
+        <ul className="upcoming-events">
+          {events
+            ?.filter((event) => {
+              return differenceDate(event.date) < 0;
+            })
+            .sort((a, b): number => {
+              return differenceDate(a.date) - differenceDate(b.date);
+            })
+            .map((event, index) => (
+              <li key={index}>
+                <h5>{event.title}</h5>
+                <h6>
+                  {formatDate(event.date)}, {getFormattedTime(event.date)} CST
+                </h6>
+                {event.address ? <h6>{event.address}</h6> : <></>}
+                <p>{event.content.substring(0, 120)}...</p>
+                <div className="button-container">
+                  <Link to={`/event/${event.id}`}>View Event</Link>
+                </div>
+              </li>
+            ))}
+        </ul>
       </div>
       <Footer />
     </main>
