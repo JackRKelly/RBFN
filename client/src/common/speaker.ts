@@ -1,13 +1,14 @@
 import { Upload } from "./strapi";
 
 export interface SpeakerT {
-  banner: Upload;
-  content: string;
+  image: Upload;
+  link: string;
   title: string;
+  name: string;
+  date: string;
   createdAt: string;
   id: string;
   updatedAt: string;
-  date: string;
   time: string;
   address: string;
   __v: number;

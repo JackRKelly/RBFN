@@ -13,6 +13,7 @@ import {
   differenceDate,
   formatDate,
   getFormattedTime,
+  formatNoTimezoneLongDate,
 } from "../../common/date";
 import Footer from "../../components/footer";
 
@@ -23,7 +24,7 @@ interface Props {
 const Events: FC<Props> = (props) => {
   const { setLoading } = props;
   const [events, setEvents] = useState<Array<EventT>>();
-  const [speaker, setSpeakers] = useState<Array<EventT>>();
+  const [speakers, setSpeakers] = useState<Array<SpeakerT>>();
 
   useEffect(() => {
     document.title = "Events | RBFN";
@@ -67,7 +68,7 @@ const Events: FC<Props> = (props) => {
                 <h6>
                   {formatDate(event.date)}, {getFormattedTime(event.date)} CST
                 </h6>
-                <h6>{event.address}</h6>
+                {event.address ? <h6>{event.address}</h6> : <></>}
                 <p>{event.content.substring(0, 120)}...</p>
                 <div className="button-container">
                   <Link to={`/event/${event.id}`}>View Event</Link>
@@ -76,7 +77,32 @@ const Events: FC<Props> = (props) => {
             ))}
         </ul>
         <h2>Past Speakers:</h2>
-
+        <ul className="past-speakers">
+          {speakers
+            ?.sort((a, b): number => {
+              return differenceDate(a.date) - differenceDate(b.date);
+            })
+            .map((speaker, index) => (
+              <li key={index}>
+                <img
+                  src={`http://localhost:2000${speaker.image.url}`}
+                  alt="Event background"
+                />
+                <h4>{speaker.name}</h4>
+                <h5>{formatNoTimezoneLongDate(speaker.date)}</h5>
+                <h6>{speaker.title}</h6>
+                <div className="button-container">
+                  <a
+                    href={speaker.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    View Series
+                  </a>
+                </div>
+              </li>
+            ))}
+        </ul>
         <h2>Past Events:</h2>
       </div>
       <Footer />
