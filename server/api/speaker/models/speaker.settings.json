@@ -9,13 +9,16 @@
     "timestamps": true
   },
   "attributes": {
-    "content": {
-      "type": "richtext"
-    },
     "title": {
       "type": "string"
     },
-    "banner": {
+    "name": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    },
+    "image": {
       "model": "file",
       "via": "related",
       "allowedTypes": [

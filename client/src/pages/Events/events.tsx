@@ -6,6 +6,7 @@ import React, {
   useState,
 } from "react";
 import { EventT } from "../../common/event";
+import { SpeakerT } from "../../common/speaker";
 import "./events.scss";
 import { Link } from "react-router-dom";
 import {
@@ -22,6 +23,7 @@ interface Props {
 const Events: FC<Props> = (props) => {
   const { setLoading } = props;
   const [events, setEvents] = useState<Array<EventT>>();
+  const [speaker, setSpeakers] = useState<Array<EventT>>();
 
   useEffect(() => {
     document.title = "Events | RBFN";
@@ -30,6 +32,13 @@ const Events: FC<Props> = (props) => {
     fetch("http://localhost:2000/events").then((res) => {
       res.json().then((json: Array<EventT>) => {
         setEvents(json);
+        setLoading(false);
+      });
+    });
+
+    fetch("http://localhost:2000/speakers").then((res) => {
+      res.json().then((json: Array<SpeakerT>) => {
+        setSpeakers(json);
         setLoading(false);
       });
     });
@@ -67,6 +76,7 @@ const Events: FC<Props> = (props) => {
             ))}
         </ul>
         <h2>Past Speakers:</h2>
+
         <h2>Past Events:</h2>
       </div>
       <Footer />
