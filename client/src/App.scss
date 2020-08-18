@@ -1,12 +1,8 @@
 @import "./variables.scss";
 
 nav.navigation-full {
-  position: fixed;
-  top: 0;
-  right: 0;
   left: unset;
   bottom: 0;
-  background-color: white;
   z-index: 300;
   overflow: hidden;
   @include ease-in-out(150ms);
@@ -17,6 +13,7 @@ nav.navigation-full {
     width: 70%;
     transform: translateX(-50%);
     display: flex;
+    max-width: 300px;
     li {
       display: inline-block;
       padding-right: 10px;
@@ -36,13 +33,8 @@ nav.navigation-full {
     }
   }
   ul.pages {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
     width: 100%;
     height: 100%;
-    align-items: center;
     justify-content: center;
     flex-wrap: wrap;
     flex-direction: column;
@@ -51,7 +43,6 @@ nav.navigation-full {
       cursor: pointer;
       padding: 10px;
       margin: 10px 0 20px;
-      @include bezier(150ms);
       svg {
         fill: $navy;
       }
@@ -62,7 +53,6 @@ nav.navigation-full {
     a {
       padding: 10px;
       margin: 10px;
-      text-decoration: none;
       &::after {
         bottom: 7px;
         height: 2px;
@@ -113,7 +103,6 @@ nav {
   ul {
     list-style: none;
     padding: 0;
-    margin: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
