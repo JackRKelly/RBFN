@@ -30,14 +30,14 @@ const Events: FC<Props> = (props) => {
     document.title = "Events | RBFN";
     setLoading(true);
 
-    fetch("http://localhost:2000/events").then((res) => {
+    fetch("/api/events").then((res) => {
       res.json().then((json: Array<EventT>) => {
         setEvents(json);
         setLoading(false);
       });
     });
 
-    fetch("http://localhost:2000/speakers").then((res) => {
+    fetch("/api/speakers").then((res) => {
       res.json().then((json: Array<SpeakerT>) => {
         setSpeakers(json);
         setLoading(false);

@@ -22,7 +22,7 @@ const Newsletters: FC<Props> = (props) => {
     document.title = "Newsletter | RBFN";
     setLoading(true);
 
-    fetch("http://localhost:2000/newsletters").then((res) => {
+    fetch("/api/newsletters").then((res) => {
       res.json().then((json: Array<NewsletterT>) => {
         setNewsletters(json.reverse());
         setLoading(false);
