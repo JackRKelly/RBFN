@@ -88,10 +88,7 @@ const Events: FC<Props> = (props) => {
             .reverse()
             .map((speaker, index) => (
               <li key={index}>
-                <img
-                  src={`http://localhost:2000${speaker.image.url}`}
-                  alt="Event background"
-                />
+                <img src={`/api/${speaker.image.url}`} alt="Event background" />
                 <h4>{speaker.name}</h4>
                 <h5>{formatNoTimezoneLongDate(speaker.date)}</h5>
                 <h6>{speaker.title}</h6>
