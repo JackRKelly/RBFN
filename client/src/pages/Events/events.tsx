@@ -30,14 +30,14 @@ const Events: FC<Props> = (props) => {
     document.title = "Events | RBFN";
     setLoading(true);
 
-    fetch("/api/events").then((res) => {
+    fetch("https://rbfn.org/api/events").then((res) => {
       res.json().then((json: Array<EventT>) => {
         setEvents(json);
         setLoading(false);
       });
     });
 
-    fetch("/api/speakers").then((res) => {
+    fetch("https://rbfn.org/api/speakers").then((res) => {
       res.json().then((json: Array<SpeakerT>) => {
         setSpeakers(json);
         setLoading(false);
@@ -88,7 +88,10 @@ const Events: FC<Props> = (props) => {
             .reverse()
             .map((speaker, index) => (
               <li key={index}>
-                <img src={`/api/${speaker.image.url}`} alt="Event background" />
+                <img
+                  src={`https://rbfn.org/api/${speaker.image.url}`}
+                  alt="Event background"
+                />
                 <h4>{speaker.name}</h4>
                 <h5>{formatNoTimezoneLongDate(speaker.date)}</h5>
                 <h6>{speaker.title}</h6>
