@@ -3,7 +3,23 @@
 main {
   .event {
     img {
-      width: 100%;
+      width: 100vw;
+      position: relative;
+      @media (max-width: $medium) {
+        left: -7.5vw;
+      }
+      @media (max-width: 500px) {
+        left: -6.25vw;
+      }
+      @media (min-width: $medium) {
+        left: -10vw;
+      }
+      @media (min-width: $large) {
+        left: -15vw;
+      }
+      @media (min-width: $extralarge) {
+        left: -20vw;
+      }
     }
     h1 {
       margin: 20px 0 0;

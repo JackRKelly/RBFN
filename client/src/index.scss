@@ -30,9 +30,20 @@ h6 {
 
 main {
   @include main;
+  overflow: hidden;
+  font-size: 20px;
+  @media (min-width: $large) {
+    font-size: 22.5px;
+  }
   .main-wrapper {
     @include width;
-    padding: 30px 0 30px 0;
+    @media (max-width: $large) {
+      padding: 30px 0 30px 0;
+    }
+    @media (max-width: $medium) {
+      padding: 20px 0 20px 0;
+    }
+    padding: 45px 0 45px 0;
   }
 }
 

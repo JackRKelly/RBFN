@@ -1,7 +1,7 @@
 import { Upload } from "./strapi";
 
 export interface EventT {
-  banner: Upload;
+  banner?: Upload;
   content: string;
   title: string;
   createdAt: string;

@@ -13,7 +13,6 @@ import {
   differenceDate,
   formatDate,
   getFormattedTime,
-  formatNoTimezoneLongDate,
 } from "../../common/date";
 import Footer from "../../components/footer";
 
@@ -33,6 +32,8 @@ const Events: FC<Props> = (props) => {
     fetch("https://rbfn.org/api/events").then((res) => {
       res.json().then((json: Array<EventT>) => {
         setEvents(json);
+
+        console.log(events);
         setLoading(false);
       });
     });
@@ -45,6 +46,13 @@ const Events: FC<Props> = (props) => {
     });
   }, [setLoading]);
 
+  useEffect(() => {
+    events?.sort(
+      (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+    );
+    console.log(events);
+  }, [events]);
+
   return (
     <main>
       <div className="main-wrapper">
@@ -56,14 +64,22 @@ const Events: FC<Props> = (props) => {
           experience and approach and answering questions from the RBFN
           community.
         </p>
-        <h2>Upcoming Events:</h2>
+        <div className="events-wrapper">
+          <div className="virtual-events">
+            <h2>Upcoming Virtual Events:</h2>
+            <ul className="upcoming-virtual-events"></ul>
+          </div>
+          <div className="inperson-events">
+            <h2>Upcoming In-Person Events:</h2>
+            <ul className="upcoming-inperson-events"></ul>
+            <p>Stay tuned and wear a mask.</p>
+          </div>
+        </div>
+
         <ul className="upcoming-events">
           {events
             ?.filter((event) => {
               return differenceDate(event.date) > 0;
-            })
-            .sort((a, b): number => {
-              return differenceDate(a.date) - differenceDate(b.date);
             })
             .map((event, index) => (
               <li key={index}>
@@ -79,8 +95,7 @@ const Events: FC<Props> = (props) => {
               </li>
             ))}
         </ul>
-        <h2>Past Speakers:</h2>
-        <ul className="past-speakers">
+        {/* <ul className="past-speakers">
           {speakers
             ?.sort((a, b): number => {
               return differenceDate(a.date) - differenceDate(b.date);
@@ -106,9 +121,9 @@ const Events: FC<Props> = (props) => {
                 </div>
               </li>
             ))}
-        </ul>
+        </ul> */}
         <h2>Past Events:</h2>
-        <ul className="upcoming-events">
+        <ul className="past-events">
           {events
             ?.filter((event) => {
               return differenceDate(event.date) < 0;

@@ -44,8 +44,9 @@ main {
             input,
             select {
               width: 100%;
-              padding: 5px;
-              border: solid 1px $navy;
+              border: none;
+              padding: 10px;
+              background-color: #00000010;
               border-radius: 2px;
             }
           }

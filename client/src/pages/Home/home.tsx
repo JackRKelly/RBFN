@@ -23,9 +23,9 @@ const Home: FC<Props> = (props) => {
       <div className="main-wrapper">
         <h1>Why we exist</h1>
         <p>
-          We are a community of revenue-based financing (and other)
-          practitioners focused on developing our industry and extending our
-          reach to entrepreneurs around the world.
+          We are a community of revenue-based financing practitioners focused on
+          developing our industry and extending our reach to entrepreneurs
+          around the world.
         </p>
         <h1>What we do</h1>
         <p>

@@ -29,6 +29,7 @@ const Event: FC<Props> = (props) => {
         setEvent(json);
         setLoading(false);
         document.title = `${json.title} | RBFN`;
+        console.log(json);
       });
     });
   }, [id, setLoading]);
@@ -38,10 +39,15 @@ const Event: FC<Props> = (props) => {
       <div className="main-wrapper">
         {event ? (
           <div className="event">
-            <img
-              src={`https://rbfn.org/api/${event.banner.formats.large.url}`}
-              alt="Event background"
-            />
+            {event.banner ? (
+              <img
+                src={`https://rbfn.org/api/${event.banner.formats.large.url}`}
+                alt="Event background"
+              />
+            ) : (
+              <> </>
+            )}
+
             <h1>{event.title}</h1>
             <h5>
               {formatDate(event.date)}, {getFormattedTime(event.date)} CST
