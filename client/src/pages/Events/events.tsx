@@ -32,8 +32,6 @@ const Events: FC<Props> = (props) => {
     fetch("https://rbfn.org/api/events").then((res) => {
       res.json().then((json: Array<EventT>) => {
         setEvents(json);
-
-        console.log(events);
         setLoading(false);
       });
     });
@@ -47,6 +45,7 @@ const Events: FC<Props> = (props) => {
   }, [setLoading]);
 
   useEffect(() => {
+    console.log(events);
     events?.sort(
       (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
     );
@@ -67,7 +66,32 @@ const Events: FC<Props> = (props) => {
         <div className="events-wrapper">
           <div className="virtual-events">
             <h2>Upcoming Virtual Events:</h2>
-            <ul className="upcoming-virtual-events"></ul>
+            <ul className="upcoming-virtual-events">
+              {events?.filter((event) => {
+                return differenceDate(event.date) > 0;
+              }).length === 0 ? (
+                <p>No upcoming events</p>
+              ) : (
+                events
+                  ?.filter((event) => {
+                    return differenceDate(event.date) > 0;
+                  })
+                  .map((event, index) => (
+                    <li key={index}>
+                      <h5>{event.title}</h5>
+                      <h6>
+                        {formatDate(event.date)}, {getFormattedTime(event.date)}{" "}
+                        CST
+                      </h6>
+                      {event.address ? <h6>{event.address}</h6> : <></>}
+                      <p>{event.content.substring(0, 120)}...</p>
+                      <div className="button-container">
+                        <Link to={`/event/${event.id}`}>View Event</Link>
+                      </div>
+                    </li>
+                  ))
+              )}
+            </ul>
           </div>
           <div className="inperson-events">
             <h2>Upcoming In-Person Events:</h2>
@@ -76,25 +100,7 @@ const Events: FC<Props> = (props) => {
           </div>
         </div>
 
-        <ul className="upcoming-events">
-          {events
-            ?.filter((event) => {
-              return differenceDate(event.date) > 0;
-            })
-            .map((event, index) => (
-              <li key={index}>
-                <h5>{event.title}</h5>
-                <h6>
-                  {formatDate(event.date)}, {getFormattedTime(event.date)} CST
-                </h6>
-                {event.address ? <h6>{event.address}</h6> : <></>}
-                <p>{event.content.substring(0, 120)}...</p>
-                <div className="button-container">
-                  <Link to={`/event/${event.id}`}>View Event</Link>
-                </div>
-              </li>
-            ))}
-        </ul>
+        <ul className="upcoming-events"></ul>
         {/* <ul className="past-speakers">
           {speakers
             ?.sort((a, b): number => {
@@ -127,9 +133,6 @@ const Events: FC<Props> = (props) => {
           {events
             ?.filter((event) => {
               return differenceDate(event.date) < 0;
-            })
-            .sort((a, b): number => {
-              return differenceDate(a.date) - differenceDate(b.date);
             })
             .map((event, index) => (
               <li key={index}>
