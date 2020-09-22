@@ -7,7 +7,11 @@ export interface EventT {
   createdAt: string;
   id: string;
   updatedAt: string;
+  type: string;
+  isSpeakerSeries: boolean;
   date: string;
+  name: string;
+  link: string;
   time: string;
   address: string;
   __v: number;

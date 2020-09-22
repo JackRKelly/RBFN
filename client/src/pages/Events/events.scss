@@ -3,11 +3,12 @@
 main {
   .events-wrapper {
     display: flex;
+    justify-content: space-between;
     .virtual-events,
     .inperson-events {
       width: 100%;
       @media (min-width: $large) {
-        width: 50%;
+        width: 47%;
       }
     }
   }
