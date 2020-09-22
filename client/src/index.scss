@@ -35,6 +35,9 @@ main {
   @media (min-width: $large) {
     font-size: 22.5px;
   }
+  @media (min-width: $extraextralarge) {
+    font-size: 25px;
+  }
   .main-wrapper {
     @include width;
     @media (max-width: $large) {

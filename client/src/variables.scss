@@ -8,6 +8,7 @@ $small: 400px;
 $medium: 800px;
 $large: 1200px;
 $extralarge: 1500px;
+$extraextralarge: 1800px;
 
 @mixin main {
   position: absolute;
@@ -38,7 +39,7 @@ $extralarge: 1500px;
     width: 70%;
   }
   @media (min-width: $extralarge) {
-    width: 60%;
+    width: 65%;
   }
 }
 

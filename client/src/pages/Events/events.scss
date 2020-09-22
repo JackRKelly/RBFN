@@ -4,6 +4,7 @@ main {
   .events-wrapper {
     display: flex;
     justify-content: space-between;
+    font-size: 18px;
     .virtual-events,
     .inperson-events {
       width: 100%;
@@ -22,6 +23,10 @@ main {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
     grid-gap: 32px;
+    font-size: 18px;
+    @media (min-width: $extraextralarge) {
+      font-size: 20px;
+    }
     li {
       background-color: white;
       box-shadow: 0 0 10px 2px $shadowgray;

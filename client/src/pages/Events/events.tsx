@@ -114,7 +114,7 @@ const Events: FC<Props> = (props) => {
                 .filter((event) => {
                   return event.type === "inperson";
                 }).length === 0 ? (
-                <p>No upcoming events</p>
+                <p>No upcoming events.</p>
               ) : (
                 events
                   ?.filter((event) => {
@@ -174,6 +174,9 @@ const Events: FC<Props> = (props) => {
             ?.filter((event) => {
               return differenceDate(event.date) < 0;
             })
+            .sort(
+              (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+            )
             .map((event, index) => (
               <li key={index}>
                 <h5>{event.isSpeakerSeries ? event.name : event.title}</h5>
