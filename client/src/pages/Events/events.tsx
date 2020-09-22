@@ -56,11 +56,11 @@ const Events: FC<Props> = (props) => {
       <div className="main-wrapper">
         <h1>Events</h1>
         <p>
-          At RBFN we host a variety of events. We host an annual event for
-          practitioners called the Alternative Capital Summit, and we host
-          monthly Speaker Series webinars featuring practitioners sharing their
-          experience and approach and answering questions from the RBFN
-          community.
+          Change language on Events page to: At RBFN we host a variety of events
+          including monthly Speaker Series webinars featuring practitioners
+          sharing their experience and approach and answering questions from the
+          RBFN community. We also host an annual event for practitioners called
+          the Alternative Capital Summit.
         </p>
         <div className="events-wrapper">
           <div className="virtual-events">
@@ -140,72 +140,55 @@ const Events: FC<Props> = (props) => {
           </div>
         </div>
 
-        <ul className="upcoming-events"></ul>
-        {/* <ul className="past-speakers">
-          {speakers
-            ?.sort((a, b): number => {
-              return differenceDate(a.date) - differenceDate(b.date);
-            })
-            .reverse()
-            .map((speaker, index) => (
-              <li key={index}>
-                <img
-                  src={`https://rbfn.org/api/${speaker.image.url}`}
-                  alt="Event background"
-                />
-                <h4>{speaker.name}</h4>
-                <h5>{formatNoTimezoneLongDate(speaker.date)}</h5>
-                <h6>{speaker.title}</h6>
-                <div className="button-container">
-                  <a
-                    href={speaker.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    View Series
-                  </a>
-                </div>
-              </li>
-            ))}
-        </ul> */}
-        <h2>Past Events:</h2>
-        <ul className="past-events">
-          {events
-            ?.filter((event) => {
-              return differenceDate(event.date) < 0;
-            })
-            .sort(
-              (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-            )
-            .map((event, index) => (
-              <li key={index}>
-                <h5>{event.isSpeakerSeries ? event.name : event.title}</h5>
-                <h6>
-                  {formatDate(event.date)}, {getFormattedTime(event.date)} CST
-                </h6>
-                {event.isSpeakerSeries ? <p>{event.title}</p> : <></>}
-                {event.address ? <h6>{event.address}</h6> : <></>}
-                {event.content ? (
-                  <p>{event.content.substring(0, 90)}...</p>
-                ) : (
-                  <> </>
-                )}
-                <div className="button-container">
+        <div className="past-events-wrapper">
+          <h2>Past Events:</h2>
+          <ul className="past-events">
+            {events
+              ?.filter((event) => {
+                return differenceDate(event.date) < 0;
+              })
+              .sort(
+                (a, b) =>
+                  new Date(b.date).getTime() - new Date(a.date).getTime()
+              )
+              .map((event, index) => (
+                <li key={index}>
+                  <h5>{event.isSpeakerSeries ? event.name : event.title}</h5>
+                  <h6>
+                    {event.isSpeakerSeries
+                      ? `${formatDate(event.date)}`
+                      : `${formatDate(event.date)}, ${getFormattedTime(
+                          event.date
+                        )} CST`}
+                  </h6>
                   {event.isSpeakerSeries ? (
-                    <a
-                      href={event.link}
-                      target="_blank"
-                      rel="noreferrer noopener"
-                    >
-                      View Series
-                    </a>
+                    <p style={{ textAlign: "center" }}>{event.title}</p>
                   ) : (
-                    <Link to={`/event/${event.id}`}>View Event</Link>
+                    <></>
                   )}
-                </div>
-              </li>
-            ))}
-        </ul>
+                  {event.address ? <h6>{event.address}</h6> : <></>}
+                  {event.content ? (
+                    <p>{event.content.substring(0, 90)}...</p>
+                  ) : (
+                    <> </>
+                  )}
+                  <div className="button-container">
+                    {event.isSpeakerSeries ? (
+                      <a
+                        href={event.link}
+                        target="_blank"
+                        rel="noreferrer noopener"
+                      >
+                        View Series
+                      </a>
+                    ) : (
+                      <Link to={`/event/${event.id}`}>View Event</Link>
+                    )}
+                  </div>
+                </li>
+              ))}
+          </ul>
+        </div>
       </div>
       <Footer />
     </main>

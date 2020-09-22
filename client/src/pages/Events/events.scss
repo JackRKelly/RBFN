@@ -5,12 +5,29 @@ main {
     display: flex;
     justify-content: space-between;
     font-size: 18px;
+    flex-wrap: wrap;
+    h2 {
+      font-size: 2em;
+      @media (max-width: $medium) {
+        font-size: 1.5em;
+      }
+    }
     .virtual-events,
     .inperson-events {
       width: 100%;
       @media (min-width: $large) {
         width: 47%;
       }
+    }
+  }
+
+  .past-events-wrapper {
+    font-size: 18px;
+    h2 {
+      @media (max-width: $medium) {
+        font-size: 1.5em;
+      }
+      font-size: 2em;
     }
   }
 

@@ -97,6 +97,10 @@ nav {
           height: 40px;
           margin-top: 6px;
           fill: $navy;
+          @media (max-width: $medium) {
+            height: 35px;
+            margin-top: 0;
+          }
         }
       }
     }
@@ -144,12 +148,18 @@ nav {
       }
       &.logo {
         padding: 2px 20px 4px 0;
+        @media (max-width: $medium) {
+          padding: 5px 20px 8px 0;
+        }
         &::after {
           display: none;
         }
         li {
           svg {
             height: 60px;
+            @media (max-width: $medium) {
+              height: 40px;
+            }
           }
         }
       }
