@@ -96,6 +96,8 @@ footer {
               svg {
                 fill: $navy;
                 @include bezier(150ms);
+                width: 1.3em;
+                height: 1.3em;
                 &:hover {
                   fill: $lime;
                   transform: scale(1.1);

@@ -73,7 +73,7 @@ const Events: FC<Props> = (props) => {
                 .filter((event) => {
                   return event.type === "virtual" || event.type === null;
                 }).length === 0 ? (
-                <p>No upcoming events</p>
+                <p>No upcoming virtual events.</p>
               ) : (
                 events
                   ?.filter((event) => {
@@ -114,7 +114,7 @@ const Events: FC<Props> = (props) => {
                 .filter((event) => {
                   return event.type === "inperson";
                 }).length === 0 ? (
-                <p>No upcoming events.</p>
+                <p>No upcoming in-person events.</p>
               ) : (
                 events
                   ?.filter((event) => {
@@ -141,7 +141,7 @@ const Events: FC<Props> = (props) => {
         </div>
 
         <div className="past-events-wrapper">
-          <h2>Past Events:</h2>
+          <h2>Past Events and Speakers:</h2>
           <ul className="past-events">
             {events
               ?.filter((event) => {
@@ -162,7 +162,10 @@ const Events: FC<Props> = (props) => {
                         )} CST`}
                   </h6>
                   {event.isSpeakerSeries ? (
-                    <p style={{ textAlign: "center" }}>{event.title}</p>
+                    <>
+                      <h6>Speaker Series</h6>
+                      <p style={{ textAlign: "center" }}>{event.title}</p>
+                    </>
                   ) : (
                     <></>
                   )}
