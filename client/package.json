@@ -25,7 +25,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "build-production": "scp -r ./build/* root@rbfn.org:/var/www/example.com/html"
+    "push-production": "scp -r ./build/* root@rbfn.org:/var/www/example.com/html",
+    "build-production": "npm run build && scp -r ./build/* root@rbfn.org:/var/www/example.com/html"
   },
   "eslintConfig": {
     "extends": "react-app"

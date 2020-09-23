@@ -1,4 +1,32 @@
 @import "../../variables.scss";
 
 main {
+  .divider {
+    position: relative;
+    padding: 5vh 0;
+    background-color: #16425b;
+    width: 100vw;
+    @media (max-width: $medium) {
+      left: -7.5vw;
+    }
+    @media (max-width: 500px) {
+      left: -6.25vw;
+    }
+    @media (min-width: $medium) {
+      left: -10vw;
+    }
+    @media (min-width: $large) {
+      left: -15vw;
+    }
+    @media (min-width: $extralarge) {
+      left: -17.5vw;
+    }
+    .text-wrapper {
+      @include width;
+      h1,
+      p {
+        color: #fff;
+      }
+    }
+  }
 }

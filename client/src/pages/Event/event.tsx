@@ -41,7 +41,7 @@ const Event: FC<Props> = (props) => {
           <div className="event">
             {event.banner ? (
               <img
-                src={`https://rbfn.org/api/${event.banner.formats.large.url}`}
+                src={`https://rbfn.org/api/${event.banner.url}`}
                 alt="Event background"
               />
             ) : (
