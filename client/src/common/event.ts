@@ -8,6 +8,9 @@ export interface EventT {
   id: string;
   updatedAt: string;
   type: string;
+  image: {
+    url: string;
+  };
   isSpeakerSeries: boolean;
   date: string;
   name: string;

@@ -23,8 +23,9 @@ const Subscribe: FC<Props> = (props) => {
       <div className="main-wrapper">
         <h1>Subscribe to RBFN</h1>
         <p>
-          Subscribe to Revenue Based Finance Network's Weekly Newsletter. Enter
-          more text here ****
+          Subscribe to Revenue Based Financing Network’s biweekly newsletter to
+          stay connected to other investors, learn about the space, and receive
+          invitations to our investor Speaker Series.
         </p>
         <form
           action="https://gmail.us3.list-manage.com/subscribe/post"

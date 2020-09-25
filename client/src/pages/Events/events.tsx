@@ -56,11 +56,10 @@ const Events: FC<Props> = (props) => {
       <div className="main-wrapper">
         <h1>Events</h1>
         <p>
-          Change language on Events page to: At RBFN we host a variety of events
-          including monthly Speaker Series webinars featuring practitioners
-          sharing their experience and approach and answering questions from the
-          RBFN community. We also host an annual event for practitioners called
-          the Alternative Capital Summit.
+          At RBFN we host a variety of events including monthly Speaker Series
+          webinars featuring practitioners sharing their experience and approach
+          and answering questions from the RBFN community. We also host an
+          annual event for practitioners called the Alternative Capital Summit.
         </p>
         <div className="events-wrapper">
           <div className="virtual-events">
@@ -85,15 +84,50 @@ const Events: FC<Props> = (props) => {
                   )
                   .map((event, index) => (
                     <li key={index}>
-                      <h5>{event.title}</h5>
+                      {event.image ? (
+                        <div className="img">
+                          <img src={`https://rbfn.org/api${event.image.url}`} />
+                        </div>
+                      ) : (
+                        <> </>
+                      )}
+
+                      <h5>
+                        {event.isSpeakerSeries ? event.name : event.title}
+                      </h5>
                       <h6>
-                        {formatDate(event.date)}, {getFormattedTime(event.date)}{" "}
-                        CST
+                        {event.isSpeakerSeries
+                          ? `${formatDate(event.date)}`
+                          : `${formatDate(event.date)}, ${getFormattedTime(
+                              event.date
+                            )} CST`}
                       </h6>
+                      {event.isSpeakerSeries ? (
+                        <>
+                          <h6>Speaker Series</h6>
+                          <p style={{ textAlign: "center" }}>{event.title}</p>
+                        </>
+                      ) : (
+                        <></>
+                      )}
                       {event.address ? <h6>{event.address}</h6> : <></>}
-                      <p>{event.content.substring(0, 120)}...</p>
+                      {event.content ? (
+                        <p>{event.content.substring(0, 90)}...</p>
+                      ) : (
+                        <> </>
+                      )}
                       <div className="button-container">
-                        <Link to={`/event/${event.id}`}>View Event</Link>
+                        {event.isSpeakerSeries ? (
+                          <a
+                            href={event.link}
+                            target="_blank"
+                            rel="noreferrer noopener"
+                          >
+                            Register Now
+                          </a>
+                        ) : (
+                          <Link to={`/event/${event.id}`}>View Event</Link>
+                        )}
                       </div>
                     </li>
                   ))
@@ -122,15 +156,50 @@ const Events: FC<Props> = (props) => {
                   })
                   .map((event, index) => (
                     <li key={index}>
-                      <h5>{event.title}</h5>
+                      {event.image ? (
+                        <div className="img">
+                          <img src={`https://rbfn.org/api${event.image.url}`} />
+                        </div>
+                      ) : (
+                        <> </>
+                      )}
+
+                      <h5>
+                        {event.isSpeakerSeries ? event.name : event.title}
+                      </h5>
                       <h6>
-                        {formatDate(event.date)}, {getFormattedTime(event.date)}{" "}
-                        CST
+                        {event.isSpeakerSeries
+                          ? `${formatDate(event.date)}`
+                          : `${formatDate(event.date)}, ${getFormattedTime(
+                              event.date
+                            )} CST`}
                       </h6>
+                      {event.isSpeakerSeries ? (
+                        <>
+                          <h6>Speaker Series</h6>
+                          <p style={{ textAlign: "center" }}>{event.title}</p>
+                        </>
+                      ) : (
+                        <></>
+                      )}
                       {event.address ? <h6>{event.address}</h6> : <></>}
-                      <p>{event.content.substring(0, 120)}...</p>
+                      {event.content ? (
+                        <p>{event.content.substring(0, 90)}...</p>
+                      ) : (
+                        <> </>
+                      )}
                       <div className="button-container">
-                        <Link to={`/event/${event.id}`}>View Event</Link>
+                        {event.isSpeakerSeries ? (
+                          <a
+                            href={event.link}
+                            target="_blank"
+                            rel="noreferrer noopener"
+                          >
+                            Register Now
+                          </a>
+                        ) : (
+                          <Link to={`/event/${event.id}`}>View Event</Link>
+                        )}
                       </div>
                     </li>
                   ))
@@ -153,6 +222,14 @@ const Events: FC<Props> = (props) => {
               )
               .map((event, index) => (
                 <li key={index}>
+                  {event.image ? (
+                    <div className="img">
+                      <img src={`https://rbfn.org/api${event.image.url}`} />
+                    </div>
+                  ) : (
+                    <> </>
+                  )}
+
                   <h5>{event.isSpeakerSeries ? event.name : event.title}</h5>
                   <h6>
                     {event.isSpeakerSeries

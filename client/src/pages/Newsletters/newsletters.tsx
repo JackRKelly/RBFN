@@ -34,10 +34,6 @@ const Newsletters: FC<Props> = (props) => {
     <main>
       <div className="main-wrapper">
         <h1>Newsletter Archive</h1>
-        <p>
-          Talk about newsletter send out interval and possible topics of
-          newsletters.
-        </p>
         <h2>Recent editions:</h2>
         <ul className="recent-editions">
           {newsletters

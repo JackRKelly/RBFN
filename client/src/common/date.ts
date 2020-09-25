@@ -23,7 +23,7 @@ export const formatDate = (date: string) => {
     { value: year },
   ] = dateTimeFormat.formatToParts(dateObject);
 
-  return `${month} ${day}, ${year}`;
+  return `${month} ${(parseInt(day) + 1).toString()}, ${year}`;
 };
 
 export const formatNoTimezoneLongDate = (date: string) => {
