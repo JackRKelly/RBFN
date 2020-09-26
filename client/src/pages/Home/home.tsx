@@ -24,9 +24,6 @@ const Home: FC<Props> = (props) => {
       <div className="main-wrapper">
         <div className="first-wrapper">
           <div className="left">
-            <img src={RBFNImage} alt="RBFN" />
-          </div>
-          <div className="right">
             <h1>Why we exist</h1>
             <p>
               The Revenue Based Financing Network exists to support members’
@@ -36,6 +33,9 @@ const Home: FC<Props> = (props) => {
               connected, more often. This group, consistent communication and
               knowledge sharing, and this forum will help us accomplish that.
             </p>
+          </div>
+          <div className="right">
+            <img src={RBFNImage} alt="RBFN" />
           </div>
         </div>
 
