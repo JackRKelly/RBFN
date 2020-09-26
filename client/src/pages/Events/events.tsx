@@ -26,7 +26,7 @@ const Events: FC<Props> = (props) => {
     document.title = "Events | RBFN";
     setLoading(true);
 
-    fetch("https://rbfn.org/api/events").then((res) => {
+    fetch("/api/events").then((res) => {
       res.json().then((json: Array<EventT>) => {
         setEvents((eventList) => {
           return [...eventList, ...json];
@@ -36,7 +36,7 @@ const Events: FC<Props> = (props) => {
       });
     });
 
-    fetch("https://rbfn.org/api/speakers").then((res) => {
+    fetch("/api/speakers").then((res) => {
       res.json().then((json: Array<EventT>) => {
         setEvents((eventList) => {
           return [...eventList, ...json];
@@ -86,7 +86,7 @@ const Events: FC<Props> = (props) => {
                     <li key={index}>
                       {event.image ? (
                         <div className="img">
-                          <img src={`https://rbfn.org/api${event.image.url}`} />
+                          <img src={`/api${event.image.url}`} />
                         </div>
                       ) : (
                         <> </>
@@ -158,7 +158,7 @@ const Events: FC<Props> = (props) => {
                     <li key={index}>
                       {event.image ? (
                         <div className="img">
-                          <img src={`https://rbfn.org/api${event.image.url}`} />
+                          <img src={`/api${event.image.url}`} />
                         </div>
                       ) : (
                         <> </>
@@ -224,7 +224,7 @@ const Events: FC<Props> = (props) => {
                 <li key={index}>
                   {event.image ? (
                     <div className="img">
-                      <img src={`https://rbfn.org/api${event.image.url}`} />
+                      <img src={`/api${event.image.url}`} />
                     </div>
                   ) : (
                     <> </>

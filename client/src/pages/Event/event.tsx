@@ -18,13 +18,13 @@ interface Props {
 const Event: FC<Props> = (props) => {
   const { setLoading } = props;
   const [event, setEvent] = useState<EventT>();
-  const { id } = useParams();
+  const id = useParams();
 
   useEffect(() => {
     document.title = "Event | RBFN";
     setLoading(true);
 
-    fetch(`https://rbfn.org/api/events/${id}`).then((res) => {
+    fetch(`/api/events/${id}`).then((res) => {
       res.json().then((json: EventT) => {
         setEvent(json);
         setLoading(false);
@@ -40,10 +40,7 @@ const Event: FC<Props> = (props) => {
         {event ? (
           <div className="event">
             {event.banner ? (
-              <img
-                src={`https://rbfn.org/api/${event.banner.url}`}
-                alt="Event background"
-              />
+              <img src={`/api/${event.banner.url}`} alt="Event background" />
             ) : (
               <> </>
             )}

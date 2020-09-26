@@ -23,7 +23,7 @@ const Blogs: FC<Props> = (props) => {
     document.title = "Blog | RBFN";
     setLoading(true);
 
-    fetch("https://rbfn.org/api/blogs").then((res) => {
+    fetch("/api/blogs").then((res) => {
       res.json().then((json: Array<BlogT>) => {
         setBlogs(json.reverse());
         setLoading(false);
