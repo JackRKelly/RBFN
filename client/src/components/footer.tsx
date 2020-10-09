@@ -81,7 +81,7 @@ const Footer: FC<Props> = (props: Props) => {
               </a>
             </div>
             <div className="row-2 col-2">
-              <h5>About Keith</h5>
+              <h4>About Keith</h4>
               <p>
                 After spending 7 years as a VC, Keith got tired of saying no to
                 entrepreneurs building growing businesses with real customers
