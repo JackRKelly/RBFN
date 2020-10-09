@@ -54,7 +54,7 @@ const Home: FC<Props> = (props) => {
           </div>
         </div>
       </div>
-      <Footer />
+      <Footer isHome={true}/>
     </main>
   );
 };
